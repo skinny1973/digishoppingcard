@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#6366f1">
+  <title>DigiShoppingCard</title>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <div class="header-titles">
+        <h1>DigiShoppingCard</h1>
+        <span class="header-subtitle">Le mie carte</span>
+      </div>
+      <button id="settingsBtn" class="icon-btn" aria-label="Impostazioni">
+        <i data-lucide="settings"></i>
+      </button>
+    </header>
+
+    <main class="container">
+      <div id="cardGrid" class="card-grid">
+        <!-- Cards will be rendered here -->
+      </div>
+
+      <div id="emptyState" class="empty-state">
+        <div class="empty-state-icon">🪪</div>
+        <p>Non hai ancora aggiunto nessuna carta.</p>
+        <p>Tocca il tasto + per iniziare!</p>
+      </div>
+    </main>
+
+    <button id="addCardBtn" class="fab" aria-label="Aggiungi Carta">
+      <span id="fabIcon">+</span>
+    </button>
+
+    <!-- Modal for Adding/Editing Card -->
+    <div id="addModal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="close-modal" id="closeAddModal">✕</button>
+        <h2>Nuova Carta</h2>
+
+        <div class="form-group">
+          <div id="reader"></div>
+          <div id="uploadStatus"></div>
+          <div class="btn-group">
+            <button id="startScanBtn" class="btn btn-secondary">
+              <span>📷</span> Scansiona Barcode
+            </button>
+            <label for="imageUpload" class="btn btn-secondary">
+              <span>📁</span> Carica Foto Barcode
+              <input type="file" id="imageUpload" accept="image/*" class="hidden-input">
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div id="logoPreview" class="logo-upload-preview">
+            <span id="logoPlaceholder">商</span>
+            <img id="logoImg" class="hidden-img" alt="Logo Anteprima">
+          </div>
+          <label for="logoUpload" class="logo-upload-label">
+            Carica Logo Negozio (opzionale)
+            <input type="file" id="logoUpload" accept="image/*" class="hidden-input">
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>Nome Negozio</label>
+          <input type="text" id="storeName" placeholder="Es. Esselunga, Carrefour...">
+        </div>
+
+        <div class="form-group">
+          <label>Codice Barcode</label>
+          <input type="text" id="barcodeValue" placeholder="Inserisci il codice manualmente">
+        </div>
+
+        <div class="btn-group">
+          <button id="saveCardBtn" class="btn btn-primary">Salva Carta</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Fullscreen View -->
+    <div id="viewModal" class="modal-overlay">
+      <div class="modal-content fullscreen-card">
+        <button class="close-modal" id="closeViewModal">✕</button>
+
+        <div class="card-detail-info">
+          <div id="viewStoreName" class="card-detail-name">Nome Negozio</div>
+          <div id="viewBarcodeValue" class="card-detail-code">123456789</div>
+        </div>
+
+        <div id="barcodeCanvasContainer" class="barcode-display">
+          <!-- Barcode SVG/Canvas will be here -->
+        </div>
+
+        <div class="btn-group-view">
+          <button id="closeViewBtn" class="btn btn-secondary">Chiudi</button>
+          <button id="deleteCardBtn" class="btn btn-danger">Elimina Carta</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Settings (Backup/Restore) -->
+    <div id="settingsModal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="close-modal" id="closeSettingsModal">✕</button>
+        <h2>Impostazioni</h2>
+        <p class="settings-desc">Gestisci i tuoi dati in locale o esportali per sicurezza.</p>
+
+        <div class="settings-section">
+          <h3>Backup e Ripristino</h3>
+          <p>Esporta i tuoi dati su iCloud o Google Drive salvando il file sul dispositivo. Puoi ripristinarli caricando
+            lo stesso file.</p>
+
+          <div class="btn-group">
+            <button id="exportBtn" class="btn btn-primary">
+              <i data-lucide="download"></i> Esporta Backup (.json)
+            </button>
+            <label for="importFile" class="btn btn-secondary">
+              <i data-lucide="upload"></i> Importa Backup (.json)
+              <input type="file" id="importFile" accept=".json" class="hidden-input">
+            </label>
+          </div>
+        </div>
+
+        <div class="settings-info">
+          <p>Versione 1.1.0</p>
+          <p>Tutti i dati sono salvati solo sul tuo dispositivo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
