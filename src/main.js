@@ -7,6 +7,9 @@ import { createIcons, Plus, X, Camera, Image as ImageIcon, Trash2, Smartphone, S
 let cards = JSON.parse(localStorage.getItem('loyalty_cards') || '[]')
 let currentScanner = null
 let currentCardId = null
+let userCoords = null // Current GPS position
+const NEARBY_THRESHOLD = 500 // meters
+const NEARBY_BOOST = 10000 // Boost for sorting cards nearby
 
 // --- DOM Elements ---
 const cardGrid = document.getElementById('cardGrid')
@@ -54,6 +57,72 @@ const fileToBase64 = (file) => {
     reader.onload = () => resolve(reader.result)
     reader.onerror = (error) => reject(error)
   })
+}
+
+// --- Geolocation Utilities ---
+const getDistance = (lat1, lon1, lat2, lon2) => {
+  const R = 6371e3 // metres
+  const φ1 = lat1 * Math.PI / 180
+  const φ2 = lat2 * Math.PI / 180
+  const Δφ = (lat2 - lat1) * Math.PI / 180
+  const Δλ = (lon2 - lon1) * Math.PI / 180
+
+  const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+    Math.cos(φ1) * Math.cos(φ2) *
+    Math.sin(Δλ / 2) * Math.sin(Δλ / 2)
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+
+  return R * c
+}
+
+const updateLocation = () => {
+  if (!navigator.geolocation) return
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      userCoords = { lat: pos.coords.latitude, lon: pos.coords.longitude }
+      renderCards()
+    },
+    (err) => console.warn('Geolocation error:', err),
+    { enableHighAccuracy: true }
+  )
+}
+
+const verifyAndRecordLocation = async (card, coords) => {
+  try {
+    // Check if we already have this location (avoid duplicates within 300m)
+    const alreadySaved = (card.locations || []).some(loc =>
+      getDistance(coords.lat, coords.lon, loc.lat, loc.lon) < 300
+    )
+    if (alreadySaved) return
+
+    // Cross-check with OpenStreetMap (Nominatim)
+    // We search for the card name near the current coordinates
+    const query = encodeURIComponent(card.name)
+    const url = `https://nominatim.openstreetmap.org/search?q=${query}&format=json&lat=${coords.lat}&lon=${coords.lon}&limit=5`
+
+    // Respect Nominatim Usage Policy (add User-Agent)
+    const response = await fetch(url, {
+      headers: { 'User-Agent': 'DigiShoppingCard-PWA-App' }
+    })
+    const data = await response.json()
+
+    // Verify if any result is close enough (within threshold)
+    const isValidLocation = data.some(result => {
+      const dist = getDistance(coords.lat, coords.lon, parseFloat(result.lat), parseFloat(result.lon))
+      return dist < NEARBY_THRESHOLD
+    })
+
+    if (isValidLocation) {
+      if (!card.locations) card.locations = []
+      card.locations.push({ lat: coords.lat, lon: coords.lon, timestamp: Date.now() })
+      saveToStorage()
+      console.log(`Posizione registrata per ${card.name}`)
+    } else {
+      console.log(`Posizione non verificata per ${card.name} (nessun riscontro nearby)`)
+    }
+  } catch (err) {
+    console.error('Learning error:', err)
+  }
 }
 
 // --- Barcode Generation ---
@@ -104,9 +173,22 @@ const renderCards = () => {
   } else {
     emptyState.style.display = 'none'
     const sortedCards = [...cards].sort((a, b) => {
-      const usageA = a.usageCount || 0
-      const usageB = b.usageCount || 0
-      if (usageB !== usageA) return usageB - usageA
+      let scoreA = a.usageCount || 0
+      let scoreB = b.usageCount || 0
+
+      // Location Boost
+      if (userCoords) {
+        const isANearby = (a.locations || []).some(loc =>
+          getDistance(userCoords.lat, userCoords.lon, loc.lat, loc.lon) < NEARBY_THRESHOLD
+        )
+        const isBNearby = (b.locations || []).some(loc =>
+          getDistance(userCoords.lat, userCoords.lon, loc.lat, loc.lon) < NEARBY_THRESHOLD
+        )
+        if (isANearby) scoreA += NEARBY_BOOST
+        if (isBNearby) scoreB += NEARBY_BOOST
+      }
+
+      if (scoreB !== scoreA) return scoreB - scoreA
       return a.name.localeCompare(b.name)
     })
 
@@ -159,7 +241,12 @@ const openViewModal = (card) => {
 
   // Increment usage count
   card.usageCount = (card.usageCount || 0) + 1
-  saveToStorage() // This will also trigger re-render in the background with new order next time it opens or after closing if we want, but here it saves the state.
+  saveToStorage()
+
+  // Background Learning: verify location if card is used
+  if (userCoords) {
+    verifyAndRecordLocation(card, userCoords)
+  }
 
   // Set screen brightness to max if possible (not directly possible in web, 
   // but we can suggest it or use a very white background)
@@ -285,7 +372,8 @@ saveCardBtn.onclick = () => {
     name,
     code,
     logo: logoImg.style.display !== 'none' ? logoImg.src : null,
-    usageCount: 0
+    usageCount: 0,
+    locations: []
   }
 
   cards.push(newCard)
@@ -337,6 +425,7 @@ imageUpload.onchange = async (e) => {
 
 // Initial Render
 renderCards()
+updateLocation() // Request location on start
 createIcons({
   icons: {
     Plus, X, Camera, ImageIcon, Trash2, Smartphone, Settings, Download, Upload
