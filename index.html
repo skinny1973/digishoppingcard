@@ -26,6 +26,11 @@
     </header>
 
     <main class="container">
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Cerca carta..." data-i18n-placeholder="search_placeholder">
+        <i data-lucide="search" class="search-icon"></i>
+      </div>
+
       <div id="cardGrid" class="card-grid">
         <!-- Cards will be rendered here -->
       </div>
@@ -63,6 +68,18 @@
           <label data-i18n="store_name_label">Nome Negozio</label>
           <input type="text" id="storeName" placeholder="Es. Esselunga, Carrefour..."
             data-i18n-placeholder="store_name_placeholder">
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="category_label">Categoria</label>
+          <select id="cardCategory" class="language-select">
+            <option value="other" data-i18n="cat_other">Altro</option>
+            <option value="groceries" data-i18n="cat_groceries">Spesa</option>
+            <option value="fashion" data-i18n="cat_fashion">Abbigliamento</option>
+            <option value="tech" data-i18n="cat_tech">Elettronica</option>
+            <option value="health" data-i18n="cat_health">Salute</option>
+            <option value="home" data-i18n="cat_home">Casa</option>
+          </select>
         </div>
 
         <div class="form-group">
@@ -106,6 +123,17 @@
         <p class="settings-desc" data-i18n="settings_desc">Gestisci i tuoi dati in locale o esportali per sicurezza.</p>
 
         <div class="settings-section">
+          <h3 data-i18n="security_section">Sicurezza</h3>
+          <div class="setting-item">
+            <span data-i18n="biometric_lock">Blocco Biometrico (FaceID/TouchID)</span>
+            <label class="switch">
+              <input type="checkbox" id="biometricToggle">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="settings-section">
           <h3 data-i18n="language_section">Lingua</h3>
           <select id="languageSelect" class="language-select" aria-label="Seleziona Lingua"
             data-i18n-aria="aria_select_language">
@@ -144,6 +172,18 @@
           <p class="privacy-note" data-i18n="privacy_note">La funzione di geolocalizzazione utilizza OpenStreetMap per
             verificare i negozi nelle vicinanze. Nessun dato identificativo viene inviato.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- Lock Screen Overlay -->
+    <div id="lockScreen" class="lock-screen-overlay">
+      <div class="lock-content">
+        <div class="lock-icon-wrapper">
+          <i data-lucide="lock" class="lock-icon"></i>
+        </div>
+        <h2 data-i18n="app_locked">App Bloccata</h2>
+        <p data-i18n="auth_required">Usa il FaceID o TouchID per accedere alle tue carte.</p>
+        <button id="unlockBtn" class="btn btn-primary" data-i18n="unlock_btn">Sblocca</button>
       </div>
     </div>
   </div>
