@@ -1,7 +1,7 @@
 import './style.css'
 import { Html5Qrcode, Html5QrcodeSupportedFormats } from 'html5-qrcode'
 import bwipjs from 'bwip-js'
-import { createIcons, Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload } from 'lucide'
+import { createIcons, Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload, Search, Lock } from 'lucide'
 
 // --- i18n System ---
 const translations = {
@@ -40,7 +40,21 @@ const translations = {
     read_error: 'Errore durante la lettura del file.',
     password_prompt: 'Inserisci una password per proteggere il tuo backup (lascia vuoto per non cifrare):',
     encrypted_prompt: 'Questo backup è cifrato. Inserisci la password:',
-    wrong_password: 'Password errata o file corrotto.'
+    wrong_password: 'Password errata o file corrotto.',
+    search_placeholder: 'Cerca carta...',
+    category_label: 'Categoria',
+    cat_other: 'Altro',
+    cat_groceries: 'Spesa',
+    cat_fashion: 'Abbigliamento',
+    cat_tech: 'Elettronica',
+    cat_health: 'Salute',
+    cat_home: 'Casa',
+    security_section: 'Sicurezza',
+    biometric_lock: 'Blocco Biometrico (FaceID/TouchID)',
+    app_locked: 'App Bloccata',
+    auth_required: 'Usa il FaceID o TouchID per accedere alle tue carte.',
+    unlock_btn: 'Sblocca',
+    auth_fail: 'Autenticazione fallita. Riprova.'
   },
   en: {
     app_title: 'DigiShoppingCard',
@@ -77,7 +91,21 @@ const translations = {
     read_error: 'Error reading the file.',
     password_prompt: 'Enter a password to protect your backup (leave empty for no encryption):',
     encrypted_prompt: 'This backup is encrypted. Enter the password:',
-    wrong_password: 'Wrong password or corrupted file.'
+    wrong_password: 'Wrong password or corrupted file.',
+    search_placeholder: 'Search card...',
+    category_label: 'Category',
+    cat_other: 'Other',
+    cat_groceries: 'Groceries',
+    cat_fashion: 'Fashion',
+    cat_tech: 'Tech',
+    cat_health: 'Health',
+    cat_home: 'Home',
+    security_section: 'Security',
+    biometric_lock: 'Biometric Lock (FaceID/TouchID)',
+    app_locked: 'App Locked',
+    auth_required: 'Use FaceID or TouchID to access your cards.',
+    unlock_btn: 'Unlock',
+    auth_fail: 'Authentication failed. Please try again.'
   },
   es: {
     app_title: 'DigiShoppingCard',
@@ -114,7 +142,21 @@ const translations = {
     read_error: 'Error al leer el archivo.',
     password_prompt: 'Introduce una contraseña para cifrar el archivo (deja vacío para no cifrar):',
     encrypted_prompt: 'Esta copia está cifrada. Introduce la contraseña:',
-    wrong_password: 'Contraseña incorrecta o archivo dañado.'
+    wrong_password: 'Contraseña incorrecta o archivo dañado.',
+    search_placeholder: 'Buscar tarjeta...',
+    category_label: 'Categoría',
+    cat_other: 'Otro',
+    cat_groceries: 'Supermercado',
+    cat_fashion: 'Moda',
+    cat_tech: 'Tecnología',
+    cat_health: 'Salud',
+    cat_home: 'Hogar',
+    security_section: 'Seguridad',
+    biometric_lock: 'Bloqueio Biométrico',
+    app_locked: 'App Bloqueada',
+    auth_required: 'Usa FaceID o TouchID para acceder.',
+    unlock_btn: 'Desbloquear',
+    auth_fail: 'Autenticación fallida.'
   },
   fr: {
     app_title: 'DigiShoppingCard',
@@ -151,7 +193,21 @@ const translations = {
     read_error: 'Erreur lors de la lecture du fichier.',
     password_prompt: 'Entrez un mot de passe pour chiffrer (laissez vide pour ne pas chiffrer):',
     encrypted_prompt: 'Cette sauvegarde est chiffrée. Entrez le mot de passe:',
-    wrong_password: 'Mot de passe incorrect ou fichier corrompu.'
+    wrong_password: 'Mot de passe incorrect ou fichier corrompu.',
+    search_placeholder: 'Rechercher une carte...',
+    category_label: 'Catégorie',
+    cat_other: 'Autre',
+    cat_groceries: 'Courses',
+    cat_fashion: 'Mode',
+    cat_tech: 'High-Tech',
+    cat_health: 'Santé',
+    cat_home: 'Maison',
+    security_section: 'Sécurité',
+    biometric_lock: 'Verrouillage Biométrique',
+    app_locked: 'App Verrouillée',
+    auth_required: 'Utilisez FaceID ou TouchID pour accéder.',
+    unlock_btn: 'Déverrouiller',
+    auth_fail: 'Échec de l\'authentification.'
   },
   de: {
     app_title: 'DigiShoppingCard',
