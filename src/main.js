@@ -565,31 +565,69 @@ const authenticate = async () => {
     return
   }
 
-  // Simplified auth: we use WebAuthn if available, or just a placeholder for logic
-  // Real biometric auth in browser requires PublicKeyCredential
-  try {
-    if (window.PublicKeyCredential) {
-      // This is a "mock" check for usability, in a real PWA we would use a proper challenge
-      // But for local-only PWA, we can use local authentication if available
-      const available = await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
-      if (available) {
-        // Here we would normally call navigator.credentials.create or get
-        // For simplicity and immediate usability without a backend, we use a timeout success
-        // In a real-world scenario, you'd store a credential ID to verify against
+  if (!window.PublicKeyCredential) {
+    console.warn('WebAuthn not supported')
+    document.getElementById('lockScreen').classList.remove('active')
+    isLocked = false
+    return
+  }
 
-        // Let's trigger a basic local auth check
-        document.getElementById('lockScreen').classList.remove('active')
-        isLocked = false
-      } else {
-        document.getElementById('lockScreen').classList.remove('active')
-        isLocked = false
+  try {
+    const available = await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
+    if (!available) {
+      document.getElementById('lockScreen').classList.remove('active')
+      isLocked = false
+      return
+    }
+
+    // Trigger the actual biometric prompt
+    // We use a dummy challenge as we are doing local-only verification
+    const challenge = new Uint8Array(32)
+    window.crypto.getRandomValues(challenge)
+
+    const options = {
+      publicKey: {
+        challenge,
+        timeout: 60000,
+        userVerification: 'required',
+        // These are standard dummy values to trigger the OS prompt
+        rpId: window.location.hostname,
+        authenticatorSelection: {
+          userVerification: 'required',
+          authenticatorAttachment: 'platform',
+        }
       }
-    } else {
+    }
+
+    // This is the call that actually triggers FaceID/TouchID/Fingerprint
+    // Since we don't have a backend to register, we attempt a "dummy" assertion
+    // or simply rely on the fact that if it doesn't throw, the OS handled it.
+    // Note: On some browsers, we might need a stored credential ID.
+    // For a simple PWA "App Lock", we can use a "Create" call as a verification step.
+
+    const credential = await navigator.credentials.create({
+      publicKey: {
+        ...options.publicKey,
+        pubKeyCredParams: [{ alg: -7, type: "public-key" }],
+        user: {
+          id: new Uint8Array(16),
+          name: "User",
+          displayName: "User"
+        },
+        rp: { name: "DigiShoppingCard" }
+      }
+    })
+
+    if (credential) {
       document.getElementById('lockScreen').classList.remove('active')
       isLocked = false
     }
   } catch (err) {
-    alert(t('auth_fail'))
+    console.error('Auth error:', err)
+    // If the user cancels or it fails, we don't unlock
+    if (err.name !== 'NotAllowedError') {
+      alert(t('auth_fail'))
+    }
   }
 }
 
