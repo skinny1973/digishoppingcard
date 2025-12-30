@@ -1,7 +1,7 @@
 import './style.css'
 import { Html5Qrcode, Html5QrcodeSupportedFormats } from 'html5-qrcode'
 import bwipjs from 'bwip-js'
-import { createIcons, Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload, Search, Share2 } from 'lucide'
+import { createIcons, Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload, Search, Share2, Info } from 'lucide'
 
 // --- i18n System ---
 import { translations } from './translations.js'
@@ -77,10 +77,15 @@ const closeShareBtn = document.getElementById('closeShareBtn')
 const shareQRContainer = document.getElementById('shareQRContainer')
 const shareCardBtn = document.getElementById('shareCardBtn')
 const searchInput = document.getElementById('searchInput')
+const infoBtn = document.getElementById('infoBtn')
+const infoModal = document.getElementById('infoModal')
+const closeInfoModal = document.getElementById('closeInfoModal')
+const closeInfoBtn = document.getElementById('closeInfoBtn')
 
 // Form inputs
 const storeNameInput = document.getElementById('storeName')
 const barcodeValueInput = document.getElementById('barcodeValue')
+const cardCategorySelect = document.getElementById('cardCategory')
 
 // View elements
 const viewStoreName = document.getElementById('viewStoreName')
@@ -517,6 +522,11 @@ languageSelect.onchange = (e) => {
   renderCards()
 }
 
+infoBtn.onclick = () => infoModal.classList.add('active')
+const closeInfoModalFn = () => infoModal.classList.remove('active')
+closeInfoModal.onclick = closeInfoModalFn
+closeInfoBtn.onclick = closeInfoModalFn
+
 saveCardBtn.onclick = () => {
   const name = storeNameInput.value.trim()
   const code = barcodeValueInput.value.trim()
@@ -563,5 +573,5 @@ updateUI()
 renderCards()
 updateLocation()
 createIcons({
-  icons: { Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload, Search, Share2 }
+  icons: { Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload, Search, Share2, Info }
 })

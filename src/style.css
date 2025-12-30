@@ -588,5 +588,81 @@ input[type="text"] {
   text-transform: uppercase;
 }
 
+/* --- Info Modal & Guide --- */
+.info-modal {
+  max-width: 500px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-scroll-container {
+  overflow-y: auto;
+  padding-right: 8px;
+  margin-bottom: 8px;
+}
+
+.info-scroll-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.info-scroll-container::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.about-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.info-section {
+  margin-bottom: 24px;
+}
+
+.info-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: var(--primary-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.feat-item {
+  margin-bottom: 16px;
+}
+
+.feat-item strong {
+  display: block;
+  font-size: 0.9rem;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.feat-item p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.sec-intro {
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+/* Utility classes */
+.btn-full {
+  width: 100%;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
 
 
