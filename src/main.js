@@ -1,7 +1,7 @@
 import './style.css'
 import { Html5Qrcode, Html5QrcodeSupportedFormats } from 'html5-qrcode'
 import bwipjs from 'bwip-js'
-import { createIcons, Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload, Search, Lock } from 'lucide'
+import { createIcons, Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload, Search } from 'lucide'
 
 // --- i18n System ---
 const translations = {
@@ -48,13 +48,7 @@ const translations = {
     cat_fashion: 'Abbigliamento',
     cat_tech: 'Elettronica',
     cat_health: 'Salute',
-    cat_home: 'Casa',
-    security_section: 'Sicurezza',
-    biometric_lock: 'Blocco Biometrico (FaceID/TouchID)',
-    app_locked: 'App Bloccata',
-    auth_required: 'Usa il FaceID o TouchID per accedere alle tue carte.',
-    unlock_btn: 'Sblocca',
-    auth_fail: 'Autenticazione fallita. Riprova.'
+    cat_home: 'Casa'
   },
   en: {
     app_title: 'DigiShoppingCard',
@@ -99,13 +93,7 @@ const translations = {
     cat_fashion: 'Fashion',
     cat_tech: 'Tech',
     cat_health: 'Health',
-    cat_home: 'Home',
-    security_section: 'Security',
-    biometric_lock: 'Biometric Lock (FaceID/TouchID)',
-    app_locked: 'App Locked',
-    auth_required: 'Use FaceID or TouchID to access your cards.',
-    unlock_btn: 'Unlock',
-    auth_fail: 'Authentication failed. Please try again.'
+    cat_home: 'Home'
   },
   es: {
     app_title: 'DigiShoppingCard',
@@ -150,13 +138,7 @@ const translations = {
     cat_fashion: 'Moda',
     cat_tech: 'Tecnología',
     cat_health: 'Salud',
-    cat_home: 'Hogar',
-    security_section: 'Seguridad',
-    biometric_lock: 'Bloqueio Biométrico',
-    app_locked: 'App Bloqueada',
-    auth_required: 'Usa FaceID o TouchID para acceder.',
-    unlock_btn: 'Desbloquear',
-    auth_fail: 'Autenticación fallida.'
+    cat_home: 'Hogar'
   },
   fr: {
     app_title: 'DigiShoppingCard',
@@ -201,13 +183,7 @@ const translations = {
     cat_fashion: 'Mode',
     cat_tech: 'High-Tech',
     cat_health: 'Santé',
-    cat_home: 'Maison',
-    security_section: 'Sécurité',
-    biometric_lock: 'Verrouillage Biométrique',
-    app_locked: 'App Verrouillée',
-    auth_required: 'Utilisez FaceID ou TouchID pour accéder.',
-    unlock_btn: 'Déverrouiller',
-    auth_fail: 'Échec de l\'authentification.'
+    cat_home: 'Maison'
   },
   de: {
     app_title: 'DigiShoppingCard',
@@ -252,13 +228,7 @@ const translations = {
     cat_fashion: 'Mode',
     cat_tech: 'Technik',
     cat_health: 'Gesundheit',
-    cat_home: 'Heim',
-    security_section: 'Sicherheit',
-    biometric_lock: 'Biometrische Sperre',
-    app_locked: 'App gesperrt',
-    auth_required: 'FaceID oder TouchID zum Entsperren nutzen.',
-    unlock_btn: 'Entsperren',
-    auth_fail: 'Authentifizierung fehlgeschlagen.'
+    cat_home: 'Heim'
   },
   pt: {
     app_title: 'DigiShoppingCard',
@@ -303,13 +273,7 @@ const translations = {
     cat_fashion: 'Moda',
     cat_tech: 'Tecnologia',
     cat_health: 'Saúde',
-    cat_home: 'Casa',
-    security_section: 'Segurança',
-    biometric_lock: 'Bloqueio Biométrico',
-    app_locked: 'App Bloqueada',
-    auth_required: 'Use FaceID ou TouchID para acessar.',
-    unlock_btn: 'Desbloquear',
-    auth_fail: 'Falha na autenticação.'
+    cat_home: 'Casa'
   },
   bn: {
     app_title: 'DigiShoppingCard',
@@ -354,13 +318,7 @@ const translations = {
     cat_fashion: 'ফ্যাশন',
     cat_tech: 'প্রযুক্তি',
     cat_health: 'স্বাস্থ্য',
-    cat_home: 'বাসা',
-    security_section: 'নিরাপত্তা',
-    biometric_lock: 'বায়োমেট্রিক লক',
-    app_locked: 'অ্যাপ লক করা হয়েছে',
-    auth_required: 'অ্যাক্সেস করতে FaceID বা TouchID ব্যবহার করুন।',
-    unlock_btn: 'আনলক করুন',
-    auth_fail: 'প্রমাণীকরণ ব্যর্থ হয়েছে।'
+    cat_home: 'বাসা'
   },
   ar: {
     app_title: 'DigiShoppingCard',
@@ -405,13 +363,7 @@ const translations = {
     cat_fashion: 'أزياء',
     cat_tech: 'تقنية',
     cat_health: 'صحة',
-    cat_home: 'منزل',
-    security_section: 'الأمان',
-    biometric_lock: 'القفل البيومتري',
-    app_locked: 'التطبيق مقفل',
-    auth_required: 'استخدم FaceID أو TouchID للوصول إلى بطاقاتك.',
-    unlock_btn: 'فتح القفل',
-    auth_fail: 'فشل المصادقة.'
+    cat_home: 'منزل'
   },
   ru: {
     app_title: 'DigiShoppingCard',
@@ -456,13 +408,7 @@ const translations = {
     cat_fashion: 'Мода',
     cat_tech: 'Техника',
     cat_health: 'Здоровье',
-    cat_home: 'Дом',
-    security_section: 'Безопасность',
-    biometric_lock: 'Биометрическая блокировка',
-    app_locked: 'Приложение заблокировано',
-    auth_required: 'Используйте FaceID или TouchID для доступа к вашим картам.',
-    unlock_btn: 'Разблокировать',
-    auth_fail: 'Ошибка аутентификации.'
+    cat_home: 'Дом'
   },
   id: {
     app_title: 'DigiShoppingCard',
@@ -507,13 +453,7 @@ const translations = {
     cat_fashion: 'Mode',
     cat_tech: 'Teknologi',
     cat_health: 'Kesehatan',
-    cat_home: 'Rumah',
-    security_section: 'Keamanan',
-    biometric_lock: 'Kunci Biometrik',
-    app_locked: 'Aplikasi Terkunci',
-    auth_required: 'Gunakan FaceID atau TouchID untuk mengakses kartu Anda.',
-    unlock_btn: 'Buka Kunci',
-    auth_fail: 'Autentikasi gagal.'
+    cat_home: 'Rumah'
   }
 }
 
@@ -521,7 +461,6 @@ let currentLang = localStorage.getItem('app_lang') ||
   (navigator.language.startsWith('it') ? 'it' :
     translations[navigator.language.split('-')[0]] ? navigator.language.split('-')[0] : 'en')
 
-let isLocked = localStorage.getItem('app_locked') === 'true'
 let searchQuery = ''
 
 const t = (key, params = {}) => {
@@ -556,77 +495,6 @@ const updateUI = () => {
   document.getElementById('languageSelect').value = currentLang
 }
 
-// --- Biometric Auth ---
-const authenticate = async () => {
-  if (!window.isSecureContext) {
-    alert('L\'autenticazione richiede una connessione sicura (HTTPS).');
-    document.getElementById('lockScreen').classList.remove('active');
-    return;
-  }
-
-  if (!window.PublicKeyCredential) {
-    alert('Il tuo browser non supporta le funzionalità di sicurezza biometrica.');
-    document.getElementById('lockScreen').classList.remove('active');
-    return;
-  }
-
-  try {
-    const available = await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
-
-    if (!available) {
-      alert('Sensore biometrico non disponibile o non configurato su questo dispositivo.');
-      document.getElementById('lockScreen').classList.remove('active');
-      return;
-    }
-
-    // Configurazione WebAuthn per attivare il prompt di sistema
-    const challenge = new Uint8Array(32);
-    window.crypto.getRandomValues(challenge);
-
-    const createOptions = {
-      publicKey: {
-        rp: {
-          name: "DigiShoppingCard",
-          id: window.location.hostname
-        },
-        user: {
-          id: new Uint8Array(16),
-          name: "local-user",
-          displayName: "Utente Locale"
-        },
-        challenge: challenge,
-        pubKeyCredParams: [
-          { alg: -7, type: "public-key" }, // ES256
-          { alg: -257, type: "public-key" } // RS256
-        ],
-        timeout: 60000,
-        authenticatorSelection: {
-          authenticatorAttachment: "platform",
-          userVerification: "required"
-        },
-        attestation: "none"
-      }
-    };
-
-    const credential = await navigator.credentials.create(createOptions);
-
-    if (credential) {
-      document.getElementById('lockScreen').classList.remove('active');
-      isLocked = false;
-    }
-  } catch (err) {
-    console.error('Auth error:', err);
-    if (err.name === 'NotAllowedError') {
-      // L'utente ha annullato la scansione, non facciamo nulla (resta bloccato)
-    } else if (err.name === 'SecurityError') {
-      alert('Errore di sicurezza: assicurati di usare il dominio corretto.');
-      document.getElementById('lockScreen').classList.remove('active');
-    } else {
-      alert(t('auth_fail') + ' (' + err.name + ')');
-    }
-  }
-}
-
 // --- State Management ---
 let cards = JSON.parse(localStorage.getItem('loyalty_cards') || '[]')
 let currentScanner = null
@@ -653,8 +521,6 @@ const closeSettingsModal = document.getElementById('closeSettingsModal')
 const exportBtn = document.getElementById('exportBtn')
 const importFile = document.getElementById('importFile')
 const languageSelect = document.getElementById('languageSelect')
-const biometricToggle = document.getElementById('biometricToggle')
-const unlockBtn = document.getElementById('unlockBtn')
 const searchInput = document.getElementById('searchInput')
 const cardCategorySelect = document.getElementById('cardCategory')
 
@@ -1078,22 +944,10 @@ searchInput.oninput = (e) => {
   renderCards()
 }
 
-biometricToggle.checked = localStorage.getItem('app_locked') === 'true'
-biometricToggle.onchange = (e) => {
-  localStorage.setItem('app_locked', e.target.checked)
-}
-
-unlockBtn.onclick = authenticate
-
-// Fullscreen check on start
-if (localStorage.getItem('app_locked') === 'true') {
-  document.getElementById('lockScreen').classList.add('active')
-}
-
 // Initial Render
 updateUI()
 renderCards()
 updateLocation()
 createIcons({
-  icons: { Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload, Search, Lock }
+  icons: { Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload, Search }
 })

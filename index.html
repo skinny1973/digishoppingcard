@@ -122,17 +122,6 @@
         <h2 data-i18n="settings_title">Impostazioni</h2>
 
         <div class="settings-section">
-          <h3 data-i18n="security_section">Sicurezza</h3>
-          <div class="setting-item">
-            <span data-i18n="biometric_lock">Blocco Biometrico (FaceID/TouchID)</span>
-            <label class="switch">
-              <input type="checkbox" id="biometricToggle" data-i18n-aria="biometric_lock">
-              <span class="slider round"></span>
-            </label>
-          </div>
-        </div>
-
-        <div class="settings-section">
           <h3 data-i18n="language_section">Lingua</h3>
           <select id="languageSelect" class="language-select" aria-label="Seleziona Lingua"
             data-i18n-aria="aria_select_language">
@@ -172,18 +161,6 @@
           <p class="privacy-note" data-i18n="privacy_note">La funzione di geolocalizzazione utilizza OpenStreetMap per
             verificare i negozi nelle vicinanze. Nessun dato identificativo viene inviato.</p>
         </div>
-      </div>
-    </div>
-
-    <!-- Lock Screen Overlay -->
-    <div id="lockScreen" class="lock-screen-overlay">
-      <div class="lock-content">
-        <div class="lock-icon-wrapper">
-          <i data-lucide="lock" class="lock-icon"></i>
-        </div>
-        <h2 data-i18n="app_locked">App Bloccata</h2>
-        <p data-i18n="auth_required">Usa il FaceID o TouchID per accedere alle tue carte.</p>
-        <button id="unlockBtn" class="btn btn-primary" data-i18n="unlock_btn">Sblocca</button>
       </div>
     </div>
   </div>
