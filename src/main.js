@@ -1,7 +1,7 @@
 import './style.css'
 import { Html5Qrcode, Html5QrcodeSupportedFormats } from 'html5-qrcode'
 import bwipjs from 'bwip-js'
-import { createIcons, Plus, X, Camera, Image as ImageIcon, Trash2, Smartphone, Settings, Download, Upload } from 'lucide'
+import { createIcons, Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload } from 'lucide'
 
 // --- State Management ---
 let cards = JSON.parse(localStorage.getItem('loyalty_cards') || '[]')
@@ -32,9 +32,6 @@ const importFile = document.getElementById('importFile')
 // Form inputs
 const storeNameInput = document.getElementById('storeName')
 const barcodeValueInput = document.getElementById('barcodeValue')
-const logoUpload = document.getElementById('logoUpload')
-const logoImg = document.getElementById('logoImg')
-const logoPlaceholder = document.getElementById('logoPlaceholder')
 
 // View elements
 const viewStoreName = document.getElementById('viewStoreName')
@@ -49,14 +46,7 @@ const saveToStorage = () => {
 
 const generateId = () => Math.random().toString(36).substr(2, 9)
 
-const fileToBase64 = (file) => {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader()
-    reader.readAsDataURL(file)
-    reader.onload = () => resolve(reader.result)
-    reader.onerror = (error) => reject(error)
-  })
-}
+
 
 // --- Geolocation Utilities ---
 const getDistance = (lat1, lon1, lat2, lon2) => {
@@ -196,16 +186,10 @@ const renderCards = () => {
       cardEl.className = 'loyalty-card'
       cardEl.onclick = () => openViewModal(card)
 
-      if (!card.logo) {
-        cardEl.style.background = colors[index % colors.length]
-      }
-
-      const logoHtml = card.logo
-        ? `<img src="${card.logo}" class="card-logo">`
-        : `<div class="card-logo" style="background: rgba(255,255,255,0.2)">${card.name[0]?.toUpperCase() || 'C'}</div>`
+      cardEl.style.background = colors[index % colors.length]
 
       cardEl.innerHTML = `
-        ${logoHtml}
+        <div class="card-logo-initials">${card.name[0]?.toUpperCase() || 'C'}</div>
         <div class="card-name">${card.name}</div>
       `
       cardGrid.appendChild(cardEl)
@@ -218,9 +202,6 @@ const openAddModal = () => {
   // Reset form
   storeNameInput.value = ''
   barcodeValueInput.value = ''
-  logoImg.src = ''
-  logoImg.style.display = 'none'
-  logoPlaceholder.style.display = 'flex'
   document.getElementById('reader').innerHTML = '' // Clear scanner div
 }
 
@@ -356,7 +337,6 @@ settingsBtn.onclick = openSettingsModal
 closeSettingsModal.onclick = closeSettingsModalFn
 exportBtn.onclick = exportCards
 importFile.onchange = importCards
-
 saveCardBtn.onclick = () => {
   const name = storeNameInput.value.trim()
   const code = barcodeValueInput.value.trim()
@@ -370,7 +350,6 @@ saveCardBtn.onclick = () => {
     id: generateId(),
     name,
     code,
-    logo: logoImg.style.display !== 'none' ? logoImg.src : null,
     usageCount: 0,
     locations: []
   }
@@ -400,14 +379,7 @@ startScanBtn.onclick = (e) => {
   }
 }
 
-logoUpload.onchange = async (e) => {
-  if (e.target.files && e.target.files[0]) {
-    const base64 = await fileToBase64(e.target.files[0])
-    logoImg.src = base64
-    logoImg.style.display = 'block'
-    logoPlaceholder.style.display = 'none'
-  }
-}
+
 
 
 // Initial Render
@@ -415,6 +387,6 @@ renderCards()
 updateLocation() // Request location on start
 createIcons({
   icons: {
-    Plus, X, Camera, ImageIcon, Trash2, Smartphone, Settings, Download, Upload
+    Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload
   }
 })
