@@ -500,4 +500,11 @@ input[type="text"] {
   margin-top: 40px;
 }
 
+.privacy-note {
+  margin-top: 12px;
+  font-style: italic;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
 
