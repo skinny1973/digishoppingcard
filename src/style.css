@@ -557,19 +557,22 @@ input[type="text"] {
 /* --- Share QR --- */
 .share-qr-display {
   background: white;
-  padding: 20px;
-  border-radius: 16px;
-  margin: 20px auto;
-  width: fit-content;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 24px auto;
+  width: 280px;
+  height: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .share-qr-display canvas {
-  max-width: 100%;
-  height: auto !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
 }
 
 /* --- Category Badge --- */

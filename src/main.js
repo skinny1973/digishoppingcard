@@ -795,9 +795,9 @@ const openShareModal = () => {
     bwipjs.toCanvas('shareQR', {
       bcid: 'qrcode',
       text: JSON.stringify(shareData),
-      scale: 3,
-      height: 10,
-      width: 10,
+      scale: 8,
+      height: 20,
+      width: 20,
       includetext: false,
       textxalign: 'center',
     })
