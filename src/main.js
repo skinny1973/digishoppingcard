@@ -185,13 +185,18 @@ const renderCards = () => {
       const cardEl = document.createElement('div')
       cardEl.className = 'loyalty-card'
       cardEl.onclick = () => openViewModal(card)
-
       cardEl.style.background = colors[index % colors.length]
 
-      cardEl.innerHTML = `
-        <div class="card-logo-initials">${card.name[0]?.toUpperCase() || 'C'}</div>
-        <div class="card-name">${card.name}</div>
-      `
+      const initials = document.createElement('div')
+      initials.className = 'card-logo-initials'
+      initials.textContent = card.name[0]?.toUpperCase() || 'C'
+
+      const name = document.createElement('div')
+      name.className = 'card-name'
+      name.textContent = card.name
+
+      cardEl.appendChild(initials)
+      cardEl.appendChild(name)
       cardGrid.appendChild(cardEl)
     })
   }
