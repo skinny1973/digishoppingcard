@@ -559,74 +559,70 @@ const updateUI = () => {
 // --- Biometric Auth ---
 const authenticate = async () => {
   if (!window.isSecureContext) {
-    console.warn('Authentication requires a secure context (HTTPS)')
-    document.getElementById('lockScreen').classList.remove('active')
-    isLocked = false
-    return
+    alert('L\'autenticazione richiede una connessione sicura (HTTPS).');
+    document.getElementById('lockScreen').classList.remove('active');
+    return;
   }
 
   if (!window.PublicKeyCredential) {
-    console.warn('WebAuthn not supported')
-    document.getElementById('lockScreen').classList.remove('active')
-    isLocked = false
-    return
+    alert('Il tuo browser non supporta le funzionalità di sicurezza biometrica.');
+    document.getElementById('lockScreen').classList.remove('active');
+    return;
   }
 
   try {
-    const available = await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
+    const available = await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
+
     if (!available) {
-      document.getElementById('lockScreen').classList.remove('active')
-      isLocked = false
-      return
+      alert('Sensore biometrico non disponibile o non configurato su questo dispositivo.');
+      document.getElementById('lockScreen').classList.remove('active');
+      return;
     }
 
-    // Trigger the actual biometric prompt
-    // We use a dummy challenge as we are doing local-only verification
-    const challenge = new Uint8Array(32)
-    window.crypto.getRandomValues(challenge)
+    // Configurazione WebAuthn per attivare il prompt di sistema
+    const challenge = new Uint8Array(32);
+    window.crypto.getRandomValues(challenge);
 
-    const options = {
+    const createOptions = {
       publicKey: {
-        challenge,
-        timeout: 60000,
-        userVerification: 'required',
-        // These are standard dummy values to trigger the OS prompt
-        rpId: window.location.hostname,
-        authenticatorSelection: {
-          userVerification: 'required',
-          authenticatorAttachment: 'platform',
-        }
-      }
-    }
-
-    // This is the call that actually triggers FaceID/TouchID/Fingerprint
-    // Since we don't have a backend to register, we attempt a "dummy" assertion
-    // or simply rely on the fact that if it doesn't throw, the OS handled it.
-    // Note: On some browsers, we might need a stored credential ID.
-    // For a simple PWA "App Lock", we can use a "Create" call as a verification step.
-
-    const credential = await navigator.credentials.create({
-      publicKey: {
-        ...options.publicKey,
-        pubKeyCredParams: [{ alg: -7, type: "public-key" }],
+        rp: {
+          name: "DigiShoppingCard",
+          id: window.location.hostname
+        },
         user: {
           id: new Uint8Array(16),
-          name: "User",
-          displayName: "User"
+          name: "local-user",
+          displayName: "Utente Locale"
         },
-        rp: { name: "DigiShoppingCard" }
+        challenge: challenge,
+        pubKeyCredParams: [
+          { alg: -7, type: "public-key" }, // ES256
+          { alg: -257, type: "public-key" } // RS256
+        ],
+        timeout: 60000,
+        authenticatorSelection: {
+          authenticatorAttachment: "platform",
+          userVerification: "required"
+        },
+        attestation: "none"
       }
-    })
+    };
+
+    const credential = await navigator.credentials.create(createOptions);
 
     if (credential) {
-      document.getElementById('lockScreen').classList.remove('active')
-      isLocked = false
+      document.getElementById('lockScreen').classList.remove('active');
+      isLocked = false;
     }
   } catch (err) {
-    console.error('Auth error:', err)
-    // If the user cancels or it fails, we don't unlock
-    if (err.name !== 'NotAllowedError') {
-      alert(t('auth_fail'))
+    console.error('Auth error:', err);
+    if (err.name === 'NotAllowedError') {
+      // L'utente ha annullato la scansione, non facciamo nulla (resta bloccato)
+    } else if (err.name === 'SecurityError') {
+      alert('Errore di sicurezza: assicurati di usare il dominio corretto.');
+      document.getElementById('lockScreen').classList.remove('active');
+    } else {
+      alert(t('auth_fail') + ' (' + err.name + ')');
     }
   }
 }
