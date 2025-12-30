@@ -72,7 +72,7 @@
 
         <div class="form-group">
           <label data-i18n="category_label">Categoria</label>
-          <select id="cardCategory" class="language-select">
+          <select id="cardCategory" class="language-select" data-i18n-aria="category_label">
             <option value="other" data-i18n="cat_other">Altro</option>
             <option value="groceries" data-i18n="cat_groceries">Spesa</option>
             <option value="fashion" data-i18n="cat_fashion">Abbigliamento</option>
@@ -120,14 +120,13 @@
       <div class="modal-content">
         <button class="close-modal" id="closeSettingsModal">✕</button>
         <h2 data-i18n="settings_title">Impostazioni</h2>
-        <p class="settings-desc" data-i18n="settings_desc">Gestisci i tuoi dati in locale o esportali per sicurezza.</p>
 
         <div class="settings-section">
           <h3 data-i18n="security_section">Sicurezza</h3>
           <div class="setting-item">
             <span data-i18n="biometric_lock">Blocco Biometrico (FaceID/TouchID)</span>
             <label class="switch">
-              <input type="checkbox" id="biometricToggle">
+              <input type="checkbox" id="biometricToggle" data-i18n-aria="biometric_lock">
               <span class="slider round"></span>
             </label>
           </div>
@@ -150,6 +149,7 @@
           </select>
         </div>
 
+        <p class="settings-desc" data-i18n="settings_desc">Gestisci i tuoi dati in locale o esportali per sicurezza.</p>
         <div class="settings-section">
           <h3 data-i18n="backup_section">Backup e Ripristino</h3>
           <p data-i18n="backup_desc">Esporta i tuoi dati su iCloud o Google Drive salvando il file sul dispositivo. Puoi
