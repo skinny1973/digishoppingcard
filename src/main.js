@@ -253,11 +253,100 @@ const closeSettingsModalFn = () => {
   settingsModal.classList.remove('active')
 }
 
-// --- Backup & Restore Logic ---
-const exportCards = () => {
-  const dataStr = JSON.stringify(cards, null, 2)
-  const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr)
+// --- Crypto Utilities for Backup ---
+const arrayBufferToBase64 = (buffer) => {
+  let binary = ''
+  const bytes = new Uint8Array(buffer)
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i])
+  }
+  return btoa(binary)
+}
 
+const base64ToArrayBuffer = (base64) => {
+  const binaryString = atob(base64)
+  const bytes = new Uint8Array(binaryString.length)
+  for (let i = 0; i < binaryString.length; i++) {
+    bytes[i] = binaryString.charCodeAt(i)
+  }
+  return bytes.buffer
+}
+
+const getEncryptionKey = async (password, salt) => {
+  const enc = new TextEncoder()
+  const keyMaterial = await crypto.subtle.importKey(
+    'raw',
+    enc.encode(password),
+    'PBKDF2',
+    false,
+    ['deriveKey']
+  )
+  return crypto.subtle.deriveKey(
+    {
+      name: 'PBKDF2',
+      salt: salt,
+      iterations: 100000,
+      hash: 'SHA-256'
+    },
+    keyMaterial,
+    { name: 'AES-GCM', length: 256 },
+    false,
+    ['encrypt', 'decrypt']
+  )
+}
+
+const encryptData = async (data, password) => {
+  const salt = crypto.getRandomValues(new Uint8Array(16))
+  const iv = crypto.getRandomValues(new Uint8Array(12))
+  const key = await getEncryptionKey(password, salt)
+  const enc = new TextEncoder()
+  const ciphertext = await crypto.subtle.encrypt(
+    { name: 'AES-GCM', iv: iv },
+    key,
+    enc.encode(JSON.stringify(data))
+  )
+
+  return {
+    version: 'encrypted-v1',
+    salt: arrayBufferToBase64(salt),
+    iv: arrayBufferToBase64(iv),
+    data: arrayBufferToBase64(ciphertext)
+  }
+}
+
+const decryptData = async (encryptedObj, password) => {
+  try {
+    const salt = base64ToArrayBuffer(encryptedObj.salt)
+    const iv = base64ToArrayBuffer(encryptedObj.iv)
+    const ciphertext = base64ToArrayBuffer(encryptedObj.data)
+    const key = await getEncryptionKey(password, new Uint8Array(salt))
+
+    const decrypted = await crypto.subtle.decrypt(
+      { name: 'AES-GCM', iv: new Uint8Array(iv) },
+      key,
+      ciphertext
+    )
+
+    const dec = new TextDecoder()
+    return JSON.parse(dec.decode(decrypted))
+  } catch (e) {
+    throw new Error('Password errata o file corrotto.')
+  }
+}
+
+// --- Backup & Restore Logic ---
+const exportCards = async () => {
+  const password = prompt('Inserisci una password per proteggere il tuo backup (lascia vuoto per non cifrare):')
+
+  let finalData
+  if (password) {
+    finalData = await encryptData(cards, password)
+  } else {
+    finalData = cards
+  }
+
+  const dataStr = JSON.stringify(finalData, null, 2)
+  const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr)
   const exportFileDefaultName = `card_wallet_backup_${new Date().toISOString().split('T')[0]}.json`
 
   const linkElement = document.createElement('a')
@@ -271,9 +360,22 @@ const importCards = (e) => {
   if (!file) return
 
   const reader = new FileReader()
-  reader.onload = (event) => {
+  reader.onload = async (event) => {
     try {
-      const imported = JSON.parse(event.target.result)
+      let imported = JSON.parse(event.target.result)
+
+      // Check if encrypted
+      if (imported.version === 'encrypted-v1') {
+        const password = prompt('Questo backup è cifrato. Inserisci la password:')
+        if (!password) return
+        try {
+          imported = await decryptData(imported, password)
+        } catch (err) {
+          alert(err.message)
+          return
+        }
+      }
+
       if (Array.isArray(imported)) {
         if (confirm(`Hai caricato ${imported.length} carte. Vuoi sostituire le tue carte attuali o aggiungerle? (OK: Sostituisci, Annulla: Aggiungi)`)) {
           cards = imported
