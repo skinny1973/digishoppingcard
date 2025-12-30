@@ -1,3 +1,8 @@
+import './style.css'
+import { Html5Qrcode, Html5QrcodeSupportedFormats } from 'html5-qrcode'
+import bwipjs from 'bwip-js'
+import { createIcons, Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload } from 'lucide'
+
 // --- i18n System ---
 const translations = {
   it: {
@@ -204,10 +209,11 @@ const updateUI = () => {
     const key = el.getAttribute('data-i18n')
     el.textContent = t(key)
   })
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const key = el.getAttribute('data-i18n-placeholder')
-    el.placeholder = t(key)
-  })
+
+  // Update placeholders
+  document.getElementById('storeName').placeholder = t('store_name_placeholder')
+  document.getElementById('barcodeValue').placeholder = t('barcode_placeholder')
+
   document.querySelectorAll('[data-i18n-aria]').forEach(el => {
     const key = el.getAttribute('data-i18n-aria')
     el.setAttribute('aria-label', t(key))
@@ -374,7 +380,7 @@ const renderCards = () => {
           getDistance(userCoords.lat, userCoords.lon, loc.lat, loc.lon) < NEARBY_THRESHOLD
         )
         const isBNearby = (b.locations || []).some(loc =>
-          getDistance(userCoords.lat, userCoords.lon, loc.lat, lon.lon) < NEARBY_THRESHOLD
+          getDistance(userCoords.lat, userCoords.lon, loc.lat, loc.lon) < NEARBY_THRESHOLD
         )
         if (isANearby) scoreA += NEARBY_BOOST
         if (isBNearby) scoreB += NEARBY_BOOST
