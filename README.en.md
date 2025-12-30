@@ -4,6 +4,9 @@ A modern, fast, and secure Progressive Web App (PWA) to digitize your loyalty ca
 
 ## ✨ Features
 - **Quick Scan**: Add cards by scanning barcodes with your camera.
+- **Quick Search**: Instantly find your card by typing the store name in the search bar.
+- **Categories**: Organize your collection by grouping cards into Groceries, Fashion, Tech, Health, and more.
+- **QR Sharing (QR Transfer)**: Instantly share your cards with family and friends by generating a QR code that can be scanned directly from another user's app.
 - **Smart Geolocation**: The app learns where you use your cards and pushes them to the top when you are near the store.
 - **Premium Design**: Optimized mobile interface with dark mode, smooth animations, and crisp icons.
 - **Offline Functionality**: Works without an internet connection once installed on your device.

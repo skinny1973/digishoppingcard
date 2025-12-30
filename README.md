@@ -4,6 +4,9 @@ Una Progressive Web App (PWA) moderna, veloce e sicura per digitalizzare le tue 
 
 ## ✨ Caratteristiche
 - **Scansione Rapida**: Aggiungi carte scansionando il codice a barre con la fotocamera.
+- **Ricerca Rapida**: Trova subito la tua carta digitando il nome del negozio nella barra di ricerca.
+- **Categorie**: Organizza la tua collezione suddividendo le carte per Spesa, Moda, Tecnologia, Salute e altro.
+- **Condivisione QR (QR Transfer)**: Condividi istantaneamente le tue carte con familiari e amici generando un codice QR che può essere scansionato direttamente dall'app di un altro utente.
 - **Geolocalizzazione Intelligente**: L'app impara dove usi le tue carte e te le mostra in cima alla lista quando sei vicino al negozio.
 - **Design Premium**: Interfaccia ottimizzata per smartphone con dark mode, animazioni fluide e icone nitide.
 - **Funzionamento Offline**: Essendo una PWA, funziona anche senza connessione internet una volta installata.

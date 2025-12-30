@@ -4,7 +4,10 @@ Une application web progressive (PWA) moderne, rapide et sécurisée pour numér
 
 ## ✨ Caractéristiques
 - **Scan Rapide**: Ajoutez des cartes en scannant le code-barres avec votre appareil photo.
-- **Géolocalisation Intelligente**: L'application apprend où vous utilisez vos cartes et les affiche en haut de la liste lorsque vous êtes à proximité du magasin.
+- **Recherche Rapide**: Trouvez instantanément votre carte en tapant le nom du magasin dans la barre de recherche.
+- **Catégories**: Organisez votre collection en regroupant les cartes par Courses, Mode, High-Tech, Santé, et plus encore.
+- **Partage QR (QR Transfer)**: Partagez instantanément vos cartes avec votre famille et vos amis en générant un code QR qui peut être scanné directement depuis l'application d'un autre utilisateur.
+- **Géolocalizzazione Intelligente**: L'application apprend où vous utilisez vos cartes et les affiche en haut de la liste lorsque vous êtes à proximité du magasin.
 - **Design Premium**: Interface mobile optimisée avec mode sombre, animations fluides et icônes nettes.
 - **Fonctionnement Hors ligne**: Fonctionne sans connexion internet une fois installée sur votre appareil.
 

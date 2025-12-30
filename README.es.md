@@ -4,6 +4,9 @@ Una aplicación web progresiva (PWA) moderna, rápida y segura para digitalizar 
 
 ## ✨ Características
 - **Escaneo Rápido**: Añade tarjetas escaneando el código de barras con tu cámara.
+- **Búsqueda Rápida**: Encuentra tu tarjeta al instante escribiendo el nombre de la tienda en la barra de búsqueda.
+- **Categorías**: Organiza tu colección agrupando tarjetas en Supermercado, Moda, Tecnología, Salud y más.
+- **Compartir QR (QR Transfer)**: Comparte tus tarjetas al instante con familiares y amigos generando un código QR que se puede escanear directamente desde la aplicación de otro usuario.
 - **Geolocalización Inteligente**: La aplicación aprende dónde usas tus tarjetas y las muestra al principio de la lista cuando estás cerca de la tienda.
 - **Diseño Premium**: Interfaz móvil optimizada con modo oscuro, animaciones fluidas e iconos nítidos.
 - **Funcionalidad Offline**: Funciona sin conexión a internet una vez instalada en tu dispositivo.
