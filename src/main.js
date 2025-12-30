@@ -35,7 +35,6 @@ const barcodeValueInput = document.getElementById('barcodeValue')
 const logoUpload = document.getElementById('logoUpload')
 const logoImg = document.getElementById('logoImg')
 const logoPlaceholder = document.getElementById('logoPlaceholder')
-const imageUpload = document.getElementById('imageUpload')
 
 // View elements
 const viewStoreName = document.getElementById('viewStoreName')
@@ -410,18 +409,6 @@ logoUpload.onchange = async (e) => {
   }
 }
 
-imageUpload.onchange = async (e) => {
-  if (e.target.files && e.target.files[0]) {
-    const scanner = new Html5Qrcode("reader")
-    try {
-      const result = await scanner.scanFile(e.target.files[0], true)
-      barcodeValueInput.value = result
-      alert('Codice rilevato: ' + result)
-    } catch (err) {
-      alert('Nessun codice trovato nell\'immagine. Prova a scattare una foto più nitida.')
-    }
-  }
-}
 
 // Initial Render
 renderCards()
