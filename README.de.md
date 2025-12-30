@@ -4,6 +4,9 @@ Eine moderne, schnelle und sichere Progressive Web App (PWA) zur Digitalisierung
 
 ## ✨ Funktionen
 - **Schnell-Scan**: Fügen Sie Karten hinzu, indem Sie Barcodes mit Ihrer Kamera scannen.
+- **Schnellsuche**: Finden Sie Ihre Karte sofort, indem Sie den Geschäftsnamen in die Suchleiste eingeben.
+- **Kategorien**: Organisieren Sie Ihre Sammlung nach Lebensmitteln, Mode, Technik, Gesundheit und mehr.
+- **QR-Teilen (QR Transfer)**: Teilen Sie Ihre Karten sofort mit Familie und Freunden, indem Sie einen QR-Code generieren, der direkt aus der App eines anderen Nutzers gescannt werden kann.
 - **Intelligente Geolokalisierung**: Die App lernt, wo Sie Ihre Karten verwenden, und schiebt diese an die Spitze der Liste, wenn Sie sich in der Nähe des Geschäfts befinden.
 - **Premium-Design**: Optimierte mobile Benutzeroberfläche mit Dark Mode, flüssigen Animationen und scharfen Symbolen.
 - **Offline-Funktionalität**: Funktioniert nach der Installation auf Ihrem Gerät auch ohne Internetverbindung.

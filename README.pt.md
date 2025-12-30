@@ -4,6 +4,9 @@ Uma aplicação web progressiva (PWA) moderna, rápida e segura para digitalizar
 
 ## ✨ Recursos
 - **Scan Rápido**: Adicione cartões escaneando o código de barras com sua câmera.
+- **Busca Rápida**: Encontre seu cartão instantaneamente digitando o nome da loja na barra de pesquisa.
+- **Categorias**: Organize sua coleção agrupando cartões em Mercearia, Moda, Tecnologia, Saúde e muito mais.
+- **Compartilhamento QR (QR Transfer)**: Compartilhe seus cartões instantaneamente com a família e amigos, gerando um código QR que pode ser digitalizado diretamente do aplicativo de outro usuário.
 - **Geolocalização Inteligente**: O aplicativo aprende onde você usa seus cartões e os mostra no topo da lista quando você está perto da loja.
 - **Design Premium**: Interface móvel otimizada com modo escuro, animações fluidas e ícones nítidos.
 - **Funcionalidade Offline**: Funciona sem conexão à internet uma vez instalado no seu dispositivo.

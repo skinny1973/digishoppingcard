@@ -4,6 +4,9 @@ Aplikasi Web Progresif (PWA) modern, cepat, dan aman untuk mendigitalkan kartu l
 
 ## ✨ Fitur
 - **Pindai Cepat**: Tambahkan kartu dengan memindai barcode menggunakan kamera Anda.
+- **Pencarian Cepat**: Temukan kartu Anda secara instan dengan mengetikkan nama toko di batang pencarian.
+- **Kategori**: Atur koleksi Anda dengan mengelompokkan kartu ke dalam Belanjaan, Mode, Teknologi, Kesehatan, dan lainnya.
+- **Berbagi QR (QR Transfer)**: Bagikan kartu Anda secara instan dengan keluarga dan teman dengan membuat kode QR yang dapat dipindai langsung dari aplikasi pengguna lain.
 - **Geolokasi Cerdas**: Aplikasi mempelajari di mana Anda menggunakan kartu dan mendorongnya ke bagian atas daftar saat Anda berada di dekat toko.
 - **Desain Premium**: Antarmuka seluler yang dioptimalkan dengan mode gelap, animasi halus, dan ikon tajam.
 - **Fungsi Offline**: Bekerja tanpa koneksi internet setelah diinstal pada perangkat Anda.
