@@ -79,7 +79,6 @@ const shareCardBtn = document.getElementById('shareCardBtn')
 const searchInput = document.getElementById('searchInput')
 const infoBtn = document.getElementById('infoBtn')
 const infoModal = document.getElementById('infoModal')
-const closeInfoModal = document.getElementById('closeInfoModal')
 const closeInfoBtn = document.getElementById('closeInfoBtn')
 
 // Form inputs
@@ -524,7 +523,6 @@ languageSelect.onchange = (e) => {
 
 infoBtn.onclick = () => infoModal.classList.add('active')
 const closeInfoModalFn = () => infoModal.classList.remove('active')
-closeInfoModal.onclick = closeInfoModalFn
 closeInfoBtn.onclick = closeInfoModalFn
 
 saveCardBtn.onclick = () => {
