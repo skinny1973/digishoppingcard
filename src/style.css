@@ -554,6 +554,24 @@ input[type="text"] {
   height: 20px;
 }
 
+/* --- Share QR --- */
+.share-qr-display {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  margin: 20px auto;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.share-qr-display canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+
 /* --- Category Badge --- */
 .card-category-badge {
   position: absolute;

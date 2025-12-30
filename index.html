@@ -109,12 +109,31 @@
         </div>
 
         <div class="btn-group-view">
+          <button id="shareCardBtn" class="btn btn-primary" data-i18n="share_btn">
+            <i data-lucide="share-2"></i> Condividi
+          </button>
           <button id="closeViewBtn" class="btn btn-secondary" data-i18n="close_btn">Chiudi</button>
           <button id="deleteCardBtn" class="btn btn-danger" data-i18n="delete_btn">Elimina Carta</button>
         </div>
       </div>
     </div>
+    <!-- Modal for Sharing QR -->
+    <div id="shareModal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="close-modal" id="closeShareModal">✕</button>
+        <h2 data-i18n="share_title">Condividi Carta</h2>
+        <p class="settings-desc" data-i18n="share_desc">Fai inquadrare questo QR all'altra persona con la sua
+          DigiShoppingCard.</p>
 
+        <div id="shareQRContainer" class="share-qr-display">
+          <!-- QR Code will be here -->
+        </div>
+
+        <div class="btn-group">
+          <button id="closeShareBtn" class="btn btn-secondary" data-i18n="close_btn">Chiudi</button>
+        </div>
+      </div>
+    </div>
     <!-- Modal for Settings (Backup/Restore) -->
     <div id="settingsModal" class="modal-overlay">
       <div class="modal-content">

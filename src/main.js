@@ -1,54 +1,58 @@
 import './style.css'
 import { Html5Qrcode, Html5QrcodeSupportedFormats } from 'html5-qrcode'
 import bwipjs from 'bwip-js'
-import { createIcons, Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload, Search } from 'lucide'
+import { createIcons, Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload, Search, Share2 } from 'lucide'
 
 // --- i18n System ---
 const translations = {
   it: {
     app_title: 'DigiShoppingCard',
     app_subtitle: 'Le mie carte',
-    aria_add_card: 'Aggiungi Carta',
-    aria_select_language: 'Seleziona Lingua',
-    new_card_title: 'Nuova Carta',
-    scan_btn: 'Scansiona Barcode',
-    store_name_label: 'Nome Negozio',
-    store_name_placeholder: 'Es. Esselunga, Carrefour...',
-    barcode_label: 'Codice Barcode',
+    aria_add_card: 'Aggiungi carta',
+    aria_select_language: 'Seleziona lingua',
+    new_card_title: 'Nuova carta',
+    scan_btn: 'Scansiona codice a barre',
+    store_name_label: 'Nome negozio',
+    store_name_placeholder: 'Es: Esselunga, Conad...',
+    barcode_label: 'Valore codice a barre',
     barcode_placeholder: 'Inserisci il codice manualmente',
-    save_btn: 'Salva Carta',
+    save_btn: 'Salva carta',
     close_btn: 'Chiudi',
-    delete_btn: 'Elimina Carta',
+    delete_btn: 'Elimina carta',
     settings_title: 'Impostazioni',
-    settings_desc: 'Gestisci i tuoi dati in locale o esportali per sicurezza.',
+    settings_desc: 'Gestisci i tuoi dati locali o esportali per il backup.',
     language_section: 'Lingua',
     backup_section: 'Backup e Ripristino',
-    backup_desc: 'Esporta i tuoi dati su iCloud o Google Drive salvando il file sul dispositivo. Puoi ripristinarli caricando lo stesso file.',
-    export_btn: 'Esporta Backup (.json)',
-    import_btn: 'Importa Backup (.json)',
+    backup_desc: 'Esporta i tuoi dati nel cloud. Puoi ripristinarli caricando lo stesso file.',
+    export_btn: 'Esporta backup (.json)',
+    import_btn: 'Importa backup (.json)',
     storage_info: 'Tutti i dati sono salvati solo sul tuo dispositivo.',
-    privacy_note: 'La funzione di geolocalizzazione utilizza OpenStreetMap per verificare i negozi nelle vicinanze. Nessun dato identificativo viene inviato.',
+    privacy_note: 'La geolocalizzazione utilizza OpenStreetMap per verificare i negozi vicini. Nessun dato identificativo viene inviato.',
     no_cards: 'Non hai ancora aggiunto nessuna carta.',
-    start_tip: 'Tocca il tasto + per iniziare!',
-    barcode_error: 'Errore generazione barcode. Assicurati che il codice sia valido.',
+    start_tip: 'Tocca il pulsante + per iniziare!',
+    barcode_error: 'Errore nella generazione del codice a barre. Assicurati che il codice sia valido.',
     confirm_delete: 'Sei sicuro di voler eliminare questa carta?',
-    fill_fields: 'Inserisci nome negozio e codice',
-    camera_error: 'Impossibile accedere alla fotocamera. Verifica i permessi.',
-    import_confirm: 'Hai caricato {n} carte. Vuoi sostituire le tue carte attuali o aggiungerle? (OK: Sostituisci, Annulla: Aggiungi)',
+    fill_fields: 'Inserisci il nome del negozio e il codice',
+    camera_error: 'Impossibile accedere alla fotocamera. Controlla i permessi.',
+    import_confirm: 'Hai caricato {n} carte. Vuoi sostituire le carte attuali o aggiungerle? (OK: Sostituisci, Annulla: Aggiungi)',
     import_success: 'Importazione completata con successo!',
     invalid_format: 'Formato file non valido.',
     read_error: 'Errore durante la lettura del file.',
-    password_prompt: 'Inserisci una password per proteggere il tuo backup (lascia vuoto per non cifrare):',
-    encrypted_prompt: 'Questo backup è cifrato. Inserisci la password:',
-    wrong_password: 'Password errata o file corrotto.',
+    password_prompt: 'Inserisci una password per proteggere il backup (lascia vuoto per non crittografare):',
+    encrypted_prompt: 'Questo backup è crittografato. Inserisci la password:',
+    wrong_password: 'Password errata o file danneggiato.',
     search_placeholder: 'Cerca carta...',
     category_label: 'Categoria',
     cat_other: 'Altro',
     cat_groceries: 'Spesa',
-    cat_fashion: 'Abbigliamento',
-    cat_tech: 'Elettronica',
+    cat_fashion: 'Moda',
+    cat_tech: 'Tecnologia',
     cat_health: 'Salute',
-    cat_home: 'Casa'
+    cat_home: 'Casa',
+    share_btn: 'Condividi',
+    share_title: 'Condividi Carta',
+    share_desc: 'Lascia che l\'altra persona scansioni questo QR.',
+    share_confirm: 'Vuoi aggiungere la carta "{name}" che ti è stata condivisa?'
   },
   en: {
     app_title: 'DigiShoppingCard',
@@ -93,7 +97,11 @@ const translations = {
     cat_fashion: 'Fashion',
     cat_tech: 'Tech',
     cat_health: 'Health',
-    cat_home: 'Home'
+    cat_home: 'Home',
+    share_btn: 'Share',
+    share_title: 'Share Card',
+    share_desc: 'Let the other person scan this QR to transfer the card.',
+    share_confirm: 'Do you want to add the card "{name}" shared with you?'
   },
   es: {
     app_title: 'DigiShoppingCard',
@@ -138,7 +146,11 @@ const translations = {
     cat_fashion: 'Moda',
     cat_tech: 'Tecnología',
     cat_health: 'Salud',
-    cat_home: 'Hogar'
+    cat_home: 'Hogar',
+    share_btn: 'Compartir',
+    share_title: 'Compartir Tarjeta',
+    share_desc: 'Deja que la otra persona escanee este QR.',
+    share_confirm: '¿Quieres añadir la tarjeta "{name}" compartida contigo?'
   },
   fr: {
     app_title: 'DigiShoppingCard',
@@ -183,7 +195,11 @@ const translations = {
     cat_fashion: 'Mode',
     cat_tech: 'High-Tech',
     cat_health: 'Santé',
-    cat_home: 'Maison'
+    cat_home: 'Maison',
+    share_btn: 'Partager',
+    share_title: 'Partager la Carte',
+    share_desc: 'Laissez l\'autre personne scanner ce QR.',
+    share_confirm: 'Voulez-vous ajouter la carte "{name}" partagée con vous?'
   },
   de: {
     app_title: 'DigiShoppingCard',
@@ -228,7 +244,11 @@ const translations = {
     cat_fashion: 'Mode',
     cat_tech: 'Technik',
     cat_health: 'Gesundheit',
-    cat_home: 'Heim'
+    cat_home: 'Heim',
+    share_btn: 'Teilen',
+    share_title: 'Karte teilen',
+    share_desc: 'Lass die andere Person diesen QR-Code scannen.',
+    share_confirm: 'Möchten Sie die geteilte Karte "{name}" hinzufügen?'
   },
   pt: {
     app_title: 'DigiShoppingCard',
@@ -318,7 +338,11 @@ const translations = {
     cat_fashion: 'ফ্যাশন',
     cat_tech: 'প্রযুক্তি',
     cat_health: 'স্বাস্থ্য',
-    cat_home: 'বাসা'
+    cat_home: 'বাসা',
+    share_btn: 'শেয়ার করুন',
+    share_title: 'কার্ড শেয়ার',
+    share_desc: 'অন্য ব্যক্তিকে এই কিউআর (QR) স্ক্যান করতে দিন।',
+    share_confirm: 'আপনার সাথে শেয়ার করা "{name}" কার্ডটি কি যোগ করতে চান?'
   },
   ar: {
     app_title: 'DigiShoppingCard',
@@ -363,7 +387,11 @@ const translations = {
     cat_fashion: 'أزياء',
     cat_tech: 'تقنية',
     cat_health: 'صحة',
-    cat_home: 'منزل'
+    cat_home: 'منزل',
+    share_btn: 'مشاركة',
+    share_title: 'مشاركة البطاقة',
+    share_desc: 'اجعل الشخص الآخر يمسح هذا الرمز.',
+    share_confirm: 'هل تريد إضافة بطاقة "{name}" التي تمت مشاركتها معك؟'
   },
   ru: {
     app_title: 'DigiShoppingCard',
@@ -408,7 +436,11 @@ const translations = {
     cat_fashion: 'Мода',
     cat_tech: 'Техника',
     cat_health: 'Здоровье',
-    cat_home: 'Дом'
+    cat_home: 'Дом',
+    share_btn: 'Поделиться',
+    share_title: 'Поделиться картой',
+    share_desc: 'Пусть другой человек отсканирует этот QR.',
+    share_confirm: 'Вы хотите добавить карту "{name}"?'
   },
   id: {
     app_title: 'DigiShoppingCard',
@@ -453,7 +485,11 @@ const translations = {
     cat_fashion: 'Mode',
     cat_tech: 'Teknologi',
     cat_health: 'Kesehatan',
-    cat_home: 'Rumah'
+    cat_home: 'Rumah',
+    share_btn: 'Bagikan',
+    share_title: 'Bagikan Kartu',
+    share_desc: 'Biarkan orang lain memindai QR ini.',
+    share_confirm: 'Apakah Anda ingin menambahkan kartu "{name}" yang dibagikan kepada Anda?'
   }
 }
 
@@ -499,6 +535,7 @@ const updateUI = () => {
 let cards = JSON.parse(localStorage.getItem('loyalty_cards') || '[]')
 let currentScanner = null
 let currentCardId = null
+let currentCard = null
 let userCoords = null // Current GPS position
 const NEARBY_THRESHOLD = 500 // meters
 const NEARBY_BOOST = 10000 // Boost for sorting cards nearby
@@ -521,8 +558,12 @@ const closeSettingsModal = document.getElementById('closeSettingsModal')
 const exportBtn = document.getElementById('exportBtn')
 const importFile = document.getElementById('importFile')
 const languageSelect = document.getElementById('languageSelect')
+const shareModal = document.getElementById('shareModal')
+const closeShareModal = document.getElementById('closeShareModal')
+const closeShareBtn = document.getElementById('closeShareBtn')
+const shareQRContainer = document.getElementById('shareQRContainer')
+const shareCardBtn = document.getElementById('shareCardBtn')
 const searchInput = document.getElementById('searchInput')
-const cardCategorySelect = document.getElementById('cardCategory')
 
 // Form inputs
 const storeNameInput = document.getElementById('storeName')
@@ -716,6 +757,7 @@ const closeAddModalFn = () => {
 
 const openViewModal = (card) => {
   currentCardId = card.id
+  currentCard = card
   viewStoreName.textContent = card.name
   viewBarcodeValue.textContent = card.code
   viewModal.classList.add('active')
@@ -734,6 +776,38 @@ const openViewModal = (card) => {
 
 const closeViewModalFn = () => {
   viewModal.classList.remove('active')
+  currentCard = null
+}
+
+const openShareModal = () => {
+  if (!currentCard) return
+  shareModal.classList.add('active')
+
+  const shareData = {
+    type: 'card_share',
+    name: currentCard.name,
+    code: currentCard.code,
+    category: currentCard.category || 'other'
+  }
+
+  shareQRContainer.innerHTML = '<canvas id="shareQR"></canvas>'
+  try {
+    bwipjs.toCanvas('shareQR', {
+      bcid: 'qrcode',
+      text: JSON.stringify(shareData),
+      scale: 3,
+      height: 10,
+      width: 10,
+      includetext: false,
+      textxalign: 'center',
+    })
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+const closeShareModalFn = () => {
+  shareModal.classList.remove('active')
 }
 
 const openSettingsModal = () => {
@@ -872,6 +946,30 @@ const startScanner = async () => {
       { facingMode: "environment" },
       { fps: 15, qrbox: { width: 280, height: 160 } },
       (decodedText) => {
+        // Recognition of shared cards
+        if (decodedText.startsWith('{"type":"card_share"')) {
+          try {
+            const data = JSON.parse(decodedText)
+            if (confirm(t('share_confirm', { name: data.name }))) {
+              const newCard = {
+                id: generateId(),
+                name: data.name,
+                code: data.code,
+                category: data.category,
+                usageCount: 0,
+                locations: []
+              }
+              cards.push(newCard)
+              saveToStorage()
+              currentScanner.stop().then(() => {
+                currentScanner = null
+                closeAddModalFn()
+              })
+              return
+            }
+          } catch (e) { }
+        }
+
         barcodeValueInput.value = decodedText
         currentScanner.stop().then(() => {
           currentScanner = null
@@ -893,6 +991,9 @@ closeViewModal.onclick = closeViewModalFn
 closeViewBtn.onclick = closeViewModalFn
 settingsBtn.onclick = openSettingsModal
 closeSettingsModal.onclick = closeSettingsModalFn
+shareCardBtn.onclick = openShareModal
+closeShareModal.onclick = closeShareModalFn
+closeShareBtn.onclick = closeShareModalFn
 exportBtn.onclick = exportCards
 importFile.onchange = importCards
 
@@ -949,5 +1050,5 @@ updateUI()
 renderCards()
 updateLocation()
 createIcons({
-  icons: { Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload, Search }
+  icons: { Plus, X, Camera, Trash2, Smartphone, Settings, Download, Upload, Search, Share2 }
 })
