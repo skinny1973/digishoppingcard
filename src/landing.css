@@ -285,6 +285,15 @@ body {
   color: var(--text-dim);
 }
 
+.feat-note {
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-top: 15px;
+  opacity: 0.8;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 10px;
+}
+
 /* Security */
 .security-box {
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
