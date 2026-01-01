@@ -93,7 +93,8 @@ export const translations = {
         landing_feedback: 'Feedback & Supporto',
         landing_nav_cta: 'Apri App',
         landing_install_h2: '📱 Come Installare l\'App',
-        landing_footer_source: 'Codice Sorgente'
+        landing_footer_source: 'Codice Sorgente',
+        visit_website: 'Visita il sito ufficiale'
     },
     en: {
         app_title: 'DigiShoppingCard',
@@ -189,7 +190,8 @@ export const translations = {
         landing_feedback: 'Feedback & Support',
         landing_nav_cta: 'Open App',
         landing_install_h2: '📱 How to Install the App',
-        landing_footer_source: 'Source Code'
+        landing_footer_source: 'Source Code',
+        visit_website: 'Visit official website'
     },
     es: {
         app_title: 'DigiShoppingCard',
@@ -285,7 +287,8 @@ export const translations = {
         landing_feedback: 'Comentarios y Soporte',
         landing_nav_cta: 'Abrir Aplicación',
         landing_install_h2: '📱 Cómo instalar la aplicación',
-        landing_footer_source: 'Código fuente'
+        landing_footer_source: 'Código fuente',
+        visit_website: 'Visitar sitio web oficial'
     },
     fr: {
         app_title: 'DigiShoppingCard',
@@ -381,7 +384,8 @@ export const translations = {
         landing_feedback: 'Commentaires et Support',
         landing_nav_cta: 'Ouvrir l\'application',
         landing_install_h2: '📱 Comment installer l\'application',
-        landing_footer_source: 'Code source'
+        landing_footer_source: 'Code source',
+        visit_website: 'Visiter le site officiel'
     },
     de: {
         app_title: 'DigiShoppingCard',
@@ -477,7 +481,8 @@ export const translations = {
         landing_feedback: 'Feedback & Support',
         landing_nav_cta: 'App öffnen',
         landing_install_h2: '📱 So installieren Sie die App',
-        landing_footer_source: 'Quellcode'
+        landing_footer_source: 'Quellcode',
+        visit_website: 'Offizielle Website besuchen'
     },
     pt: {
         app_title: 'DigiShoppingCard',
@@ -552,7 +557,8 @@ export const translations = {
         sec_transp_title: 'Transparência',
         sec_transp_text: 'A geolocalização utiliza OpenStreetMap. Nenhum dato identificativo é enviado.',
         sec_gdpr_title: 'Pronto para o RGPD',
-        sec_gdpr_text: 'Sem perfis, sem registo. O utilizador tem controlo total sobre os seus dados.'
+        sec_gdpr_text: 'Sem perfis, sem registo. O utilizador tem controlo total sobre os seus dados.',
+        visit_website: 'Visitar site oficial'
     },
     bn: {
         app_title: 'DigiShoppingCard',
@@ -648,7 +654,8 @@ export const translations = {
         landing_feedback: 'ফিডব্যাক এবং সাপোর্ট',
         landing_nav_cta: 'অ্যাপ খুলুন',
         landing_install_h2: '📱 কিভাবে অ্যাপটি ইনস্টল করবেন',
-        landing_footer_source: 'সোর্স কোড'
+        landing_footer_source: 'সোর্স কোড',
+        visit_website: 'অফিসিয়াল ওয়েবসাইটে যান'
     },
     ar: {
         app_title: 'DigiShoppingCard',
@@ -744,7 +751,8 @@ export const translations = {
         landing_feedback: 'التعليقات والدعم',
         landing_nav_cta: 'افتح التطبيق',
         landing_install_h2: '📱 كيفية تثبيت التطبيق',
-        landing_footer_source: 'رقم السورس كود'
+        landing_footer_source: 'رقم السورس كود',
+        visit_website: 'زيارة الموقع الرسمي'
     },
     ru: {
         app_title: 'DigiShoppingCard',
@@ -840,7 +848,8 @@ export const translations = {
         landing_feedback: 'Отзывы и поддержка',
         landing_nav_cta: 'Открыть приложение',
         landing_install_h2: '📱 Как установить приложение',
-        landing_footer_source: 'Исходный код'
+        landing_footer_source: 'Исходный код',
+        visit_website: 'Посетить официальный сайт'
     },
     id: {
         app_title: 'DigiShoppingCard',
@@ -919,6 +928,7 @@ export const translations = {
         sec_transp_title: 'Transparansi',
         sec_transp_text: 'Menggunakan OpenStreetMap tanpa mengirim data identitas.',
         sec_gdpr_title: 'Siap GDPR',
-        sec_gdpr_text: 'Kontrol penuh pengguna atas data mereka sendiri.'
+        sec_gdpr_text: 'Kontrol penuh pengguna atas data mereka sendiri.',
+        visit_website: 'Kunjungi situs web resmi'
     }
 }

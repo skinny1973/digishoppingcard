@@ -690,5 +690,12 @@ input[type="text"] {
   margin-top: 20px;
 }
 
+.btn-link {
+  text-decoration: none;
+  font-weight: 600;
+  gap: 12px !important;
+  margin-bottom: 12px;
+}
+
 
 
