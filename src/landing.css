@@ -100,6 +100,11 @@ body {
   border-color: var(--primary);
 }
 
+.lang-selector option {
+  background-color: #1e293b;
+  color: white;
+}
+
 .nav-cta {
   background: var(--primary);
   color: white;
