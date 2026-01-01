@@ -42,3 +42,7 @@ npm run build
 
 ## 📱 Installazione
 Apri [https://skinny1973.github.io/digishoppingcard/](https://skinny1973.github.io/digishoppingcard/) sul tuo smartphone e usa la funzione "Aggiungi alla schermata Home" del tuo browser.
+
+## 📄 Licenza
+Il codice di DigiShoppingCard è rilasciato sotto licenza **GNU General Public License v3.0**. Consulta il file [LICENSE](./LICENSE) per i dettagli.
+
