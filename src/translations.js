@@ -87,8 +87,11 @@ export const translations = {
         landing_android_li1: 'Apri <strong>Chrome</strong> e vai su questo sito.',
         landing_android_li2: 'Tocca i <strong>tre puntini</strong> in alto a destra.',
         landing_android_li3: 'Tocca <strong>Installa App</strong> o <strong>Aggiungi a schermata Home</strong>.',
-        landing_developed_by: 'Developed by Daniele Franceschini',
-        landing_feedback: 'Feedback & Supporto'
+        landing_developed_by: 'Sviluppato da Daniele Franceschini',
+        landing_feedback: 'Feedback & Supporto',
+        landing_nav_cta: 'Apri App',
+        landing_install_h2: '📱 Come Installare l\'App',
+        landing_footer_source: 'Codice Sorgente'
     },
     en: {
         app_title: 'DigiShoppingCard',
@@ -179,7 +182,10 @@ export const translations = {
         landing_android_li2: 'Tap the <strong>three dots</strong> in the top right.',
         landing_android_li3: 'Tap <strong>Install App</strong> or <strong>Add to Home Screen</strong>.',
         landing_developed_by: 'Developed by Daniele Franceschini',
-        landing_feedback: 'Feedback & Support'
+        landing_feedback: 'Feedback & Support',
+        landing_nav_cta: 'Open App',
+        landing_install_h2: '📱 How to Install the App',
+        landing_footer_source: 'Source Code'
     },
     es: {
         app_title: 'DigiShoppingCard',
@@ -269,8 +275,11 @@ export const translations = {
         landing_android_li1: 'Abre <strong>Chrome</strong> y visita este sitio.',
         landing_android_li2: 'Toca los <strong>tres puntos</strong> en la esquina superior derecha.',
         landing_android_li3: 'Toca <strong>Instalar Aplicación</strong> o <strong>Añadir a la pantalla de inicio</strong>.',
-        landing_developed_by: 'Developed by Daniele Franceschini',
-        landing_feedback: 'Comentarios y Soporte'
+        landing_developed_by: 'Desarrollado por Daniele Franceschini',
+        landing_feedback: 'Comentarios y Soporte',
+        landing_nav_cta: 'Abrir Aplicación',
+        landing_install_h2: '📱 Cómo instalar la aplicación',
+        landing_footer_source: 'Código fuente'
     },
     fr: {
         app_title: 'DigiShoppingCard',
@@ -360,8 +369,11 @@ export const translations = {
         landing_android_li1: 'Ouvrez <strong>Chrome</strong> et accédez à ce site.',
         landing_android_li2: 'Appuyez sur les <strong>trois points</strong> en haut à droite.',
         landing_android_li3: 'Appuyez sur <strong>Installer l\'application</strong> ou <strong>Ajouter à l\'écran d\'accueil</strong>.',
-        landing_developed_by: 'Developed by Daniele Franceschini',
-        landing_feedback: 'Commentaires et Support'
+        landing_developed_by: 'Développé par Daniele Franceschini',
+        landing_feedback: 'Commentaires et Support',
+        landing_nav_cta: 'Ouvrir l\'application',
+        landing_install_h2: '📱 Comment installer l\'application',
+        landing_footer_source: 'Code source'
     },
     de: {
         app_title: 'DigiShoppingCard',
@@ -451,8 +463,11 @@ export const translations = {
         landing_android_li1: 'Öffnen Sie <strong>Chrome</strong> und rufen Sie diese Website auf.',
         landing_android_li2: 'Tippen Sie oben rechts auf die <strong>drei Punkte</strong>.',
         landing_android_li3: 'Tippen Sie auf <strong>App installieren</strong> oder <strong>Zum Startbildschirm hinzufügen</strong>.',
-        landing_developed_by: 'Developed by Daniele Franceschini',
-        landing_feedback: 'Feedback & Support'
+        landing_developed_by: 'Entwickelt von Daniele Franceschini',
+        landing_feedback: 'Feedback & Support',
+        landing_nav_cta: 'App öffnen',
+        landing_install_h2: '📱 So installieren Sie die App',
+        landing_footer_source: 'Quellcode'
     },
     pt: {
         app_title: 'DigiShoppingCard',
@@ -615,8 +630,11 @@ export const translations = {
         landing_android_li1: '<strong>Chrome</strong> খুলুন এবং এই সাইটে যান।',
         landing_android_li2: 'উপরে ডানদিকে <strong>তিনটি বিন্দু</strong> তে ট্যাপ করুন।',
         landing_android_li3: '<strong>Install App</strong> বা <strong>Add to Home Screen</strong> এ ট্যাপ করুন।',
-        landing_developed_by: 'Developed by Daniele Franceschini',
-        landing_feedback: 'ফিডব্যাক এবং সাপোর্ট'
+        landing_developed_by: 'Daniele Franceschini দ্বারা তৈরি',
+        landing_feedback: 'ফিডব্যাক এবং সাপোর্ট',
+        landing_nav_cta: 'অ্যাপ খুলুন',
+        landing_install_h2: '📱 কিভাবে অ্যাপটি ইনস্টল করবেন',
+        landing_footer_source: 'সোর্স কোড'
     },
     ar: {
         app_title: 'DigiShoppingCard',
@@ -706,8 +724,11 @@ export const translations = {
         landing_android_li1: 'افتح <strong>Chrome</strong> وانتقل إلى هذا الموقع.',
         landing_android_li2: 'اضغط على <strong>النقاط الثلاث</strong> في أعلى اليمين.',
         landing_android_li3: 'اضغط على <strong>تثبيت التطبيق</strong> أو <strong>إضافة إلى الشاشة الرئيسية</strong>.',
-        landing_developed_by: 'Developed by Daniele Franceschini',
-        landing_feedback: 'التعليقات والدعم'
+        landing_developed_by: 'تم التطوير بواسطة Daniele Franceschini',
+        landing_feedback: 'التعليقات والدعم',
+        landing_nav_cta: 'افتح التطبيق',
+        landing_install_h2: '📱 كيفية تثبيت التطبيق',
+        landing_footer_source: 'رقم السورس كود'
     },
     ru: {
         app_title: 'DigiShoppingCard',
@@ -797,8 +818,11 @@ export const translations = {
         landing_android_li1: 'Откройте <strong>Chrome</strong> и перейдите на этот сайт.',
         landing_android_li2: 'Нажмите на <strong>три точки</strong> в правом верхнем углу.',
         landing_android_li3: 'Нажмите <strong>Установить приложение</strong> или <strong>Добавить на главный экран</strong>.',
-        landing_developed_by: 'Developed by Daniele Franceschini',
-        landing_feedback: 'Отзывы и поддержка'
+        landing_developed_by: 'Разработано Даниэле Франческини',
+        landing_feedback: 'Отзывы и поддержка',
+        landing_nav_cta: 'Открыть приложение',
+        landing_install_h2: '📱 Как установить приложение',
+        landing_footer_source: 'Исходный код'
     },
     id: {
         app_title: 'DigiShoppingCard',
