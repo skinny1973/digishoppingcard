@@ -77,6 +77,29 @@ body {
   color: var(--primary);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.lang-selector {
+  background: var(--glass);
+  color: white;
+  border: 1px solid var(--glass-border);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.lang-selector:focus {
+  border-color: var(--primary);
+}
+
 .nav-cta {
   background: var(--primary);
   color: white;

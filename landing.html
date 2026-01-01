@@ -17,18 +17,34 @@
                     <i data-lucide="smartphone"></i>
                     <span>DigiShoppingCard</span>
                 </div>
-                <a href="index.html" class="nav-cta">Apri App</a>
+                <div class="nav-actions">
+                    <select id="languageSelect" class="lang-selector" aria-label="Seleziona lingua">
+                        <option value="it">🇮🇹 IT</option>
+                        <option value="en">🇺🇸 EN</option>
+                        <option value="es">🇪🇸 ES</option>
+                        <option value="fr">🇫🇷 FR</option>
+                        <option value="de">🇩🇪 DE</option>
+                        <option value="pt">🇵🇹 PT</option>
+                        <option value="bn">🇧🇩 BN</option>
+                        <option value="ar">🇸🇦 AR</option>
+                        <option value="ru">🇷🇺 RU</option>
+                        <option value="id">🇮🇩 ID</option>
+                    </select>
+                    <a href="index.html" class="nav-cta" data-i18n="landing_nav_cta">Apri App</a>
+                </div>
             </div>
         </nav>
 
         <header class="hero">
             <div class="hero-container">
                 <div class="hero-content">
-                    <h1>Tutte le tue carte fedeltà, <br><span class="gradient-text">in un unico posto.</span></h1>
-                    <p>Dì addio al portafoglio gonfio. Digitalizza le tue carte in pochi secondi e ricevi suggerimenti
-                        intelligenti in base a dove ti trovi.</p>
+                    <h1 data-i18n="landing_hero_h1">Tutte le tue carte fedeltà, <br><span class="gradient-text">in un
+                            unico posto.</span></h1>
+                    <p data-i18n="landing_hero_p">Dì addio al portafoglio gonfio. Digitalizza le tue carte in pochi
+                        secondi e ricevi suggerimenti intelligenti in base a dove ti trovi.</p>
                     <div class="hero-btns">
-                        <a href="#install" class="btn btn-secondary">Guida Installazione</a>
+                        <a href="#install" class="btn btn-secondary" data-i18n="landing_install_guide">Guida
+                            Installazione</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -39,37 +55,38 @@
 
         <section class="features" id="features">
             <div class="section-container">
-                <h2 class="section-title">✨ Caratteristiche</h2>
+                <h2 class="section-title" data-i18n="feat_title">✨ Caratteristiche</h2>
                 <div class="feature-grid">
                     <div class="feature-card">
                         <div class="feat-icon"><i data-lucide="camera"></i></div>
-                        <h3>Scansione Rapida</h3>
-                        <p>Aggiungi carte in pochi istanti inquadrando il codice a barre.</p>
+                        <h3 data-i18n="feat_scan_title">Scansione Rapida</h3>
+                        <p data-i18n="feat_scan_text">Aggiungi carte in pochi istanti inquadrando il codice a barre.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feat-icon"><i data-lucide="search"></i></div>
-                        <h3>Ricerca Istantanea</h3>
-                        <p>Trova subito la carta che ti serve digitando il nome del negozio.</p>
+                        <h3 data-i18n="feat_search_title">Ricerca Istantanea</h3>
+                        <p data-i18n="feat_search_text">Trova subito la carta che ti serve digitando il nome del
+                            negozio.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feat-icon"><i data-lucide="layout"></i></div>
-                        <h3>Categorie</h3>
-                        <p>Organizza per Spesa, Moda, Tech e molto altro.</p>
+                        <h3 data-i18n="feat_cat_title">Categorie</h3>
+                        <p data-i18n="feat_cat_text">Organizza per Spesa, Moda, Tech e molto altro.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feat-icon"><i data-lucide="share-2"></i></div>
-                        <h3>QR Transfer</h3>
-                        <p>Passa le tue carte a familiari e amici in un attimo.</p>
+                        <h3 data-i18n="feat_share_title">QR Transfer</h3>
+                        <p data-i18n="feat_share_text">Passa le tue carte a familiari e amici in un attimo.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feat-icon"><i data-lucide="map-pin"></i></div>
-                        <h3>Smart Geo</h3>
-                        <p>L'app ti mostra le carte giuste quando sei vicino al negozio.</p>
+                        <h3 data-i18n="feat_geo_title">Smart Geo</h3>
+                        <p data-i18n="feat_geo_text">L'app ti mostra le carte giuste quando sei vicino al negozio.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feat-icon"><i data-lucide="wifi-off"></i></div>
-                        <h3>Sempre Disponibile</h3>
-                        <p>Funziona perfettamente anche senza connessione internet.</p>
+                        <h3 data-i18n="feat_offline_title">Sempre Disponibile</h3>
+                        <p data-i18n="feat_offline_text">Funziona perfettamente anche senza connessione internet.</p>
                     </div>
                 </div>
             </div>
@@ -79,16 +96,17 @@
             <div class="section-container">
                 <div class="security-box">
                     <div class="security-content">
-                        <h2 class="section-title">🔒 Sicurezza e Privacy (GDPR)</h2>
-                        <p>Progettata seguendo il principio della <strong>Privacy by Design</strong>. I tuoi dati non
-                            lasciano mai il tuo dispositivo se non lo decidi tu.</p>
+                        <h2 class="section-title" data-i18n="sec_title">🔒 Sicurezza e Privacy (GDPR)</h2>
+                        <p data-i18n="sec_desc">Progettata seguendo il principio della <strong>Privacy by
+                                Design</strong>. I tuoi dati non lasciano mai il tuo dispositivo se non lo decidi tu.
+                        </p>
                         <ul class="security-list">
-                            <li><i data-lucide="check-circle"></i> <strong>Local-First:</strong> Dati salvati solo sul
-                                tuo dispositivo.</li>
-                            <li><i data-lucide="check-circle"></i> <strong>Backup Cifrato:</strong> Proteggi i tuoi
-                                export con password AES-256.</li>
-                            <li><i data-lucide="check-circle"></i> <strong>Senza Registrazione:</strong> Nessun account,
-                                nessuna profilazione.</li>
+                            <li data-i18n="sec_local_text"><strong>Local-First:</strong> Dati salvati solo sul tuo
+                                dispositivo.</li>
+                            <li data-i18n="sec_backup_text"><strong>Backup Cifrato:</strong> Proteggi i tuoi export con
+                                password AES-256.</li>
+                            <li data-i18n="sec_gdpr_text"><strong>Senza Registrazione:</strong> Nessun account, nessuna
+                                profilazione.</li>
                         </ul>
                     </div>
                     <div class="security-icon-large">
@@ -100,29 +118,30 @@
 
         <section class="install" id="install">
             <div class="section-container">
-                <h2 class="section-title">📱 Come Installare l'App</h2>
-                <p class="section-subtitle">DigiShoppingCard è una App Web che puoi aggiungere alla tua schermata home
-                    in pochi secondi.</p>
+                <h2 class="section-title" data-i18n="landing_install_h2">📱 Come Installare l'App</h2>
+                <p class="section-subtitle" data-i18n="landing_install_p">DigiShoppingCard è una App Web che puoi
+                    aggiungere alla tua schermata home in pochi secondi.</p>
 
                 <div class="install-grid">
                     <div class="install-card">
                         <div class="os-icon"><i data-lucide="apple"></i></div>
-                        <h3>Su iPhone (iOS)</h3>
+                        <h3 data-i18n="landing_ios_title">Su iPhone (iOS)</h3>
                         <ol>
-                            <li>Apri <strong>Safari</strong> e vai su questo sito.</li>
-                            <li>Tocca l'icona <strong>Condividi</strong> <i data-lucide="share" class="inline-icon"></i>
-                                in basso.</li>
-                            <li>Scorri e seleziona <strong>Aggiungi alla schermata Home</strong>.</li>
+                            <li data-i18n="landing_ios_li1">Apri <strong>Safari</strong> e vai su questo sito.</li>
+                            <li data-i18n="landing_ios_li2">Tocca l'icona <strong>Condividi</strong> in basso.</li>
+                            <li data-i18n="landing_ios_li3">Scorri e seleziona <strong>Aggiungi alla schermata
+                                    Home</strong>.</li>
                         </ol>
                     </div>
                     <div class="install-card">
                         <div class="os-icon"><i data-lucide="smartphone"></i></div>
-                        <h3>Su Android</h3>
+                        <h3 data-i18n="landing_android_title">Su Android</h3>
                         <ol>
-                            <li>Apri <strong>Chrome</strong> e vai su questo sito.</li>
-                            <li>Tocca i <strong>tre puntini</strong> <i data-lucide="more-vertical"
-                                    class="inline-icon"></i> in alto a destra.</li>
-                            <li>Tocca <strong>Installa App</strong> o <strong>Aggiungi a schermata Home</strong>.</li>
+                            <li data-i18n="landing_android_li1">Apri <strong>Chrome</strong> e vai su questo sito.</li>
+                            <li data-i18n="landing_android_li2">Tocca i <strong>tre puntini</strong> in alto a destra.
+                            </li>
+                            <li data-i18n="landing_android_li3">Tocca <strong>Installa App</strong> o <strong>Aggiungi a
+                                    schermata Home</strong>.</li>
                         </ol>
                     </div>
                 </div>
@@ -131,13 +150,14 @@
 
         <footer class="footer">
             <div class="footer-container">
-                <p>&copy; 2026 DigiShoppingCard - Developed by Daniele Franceschini</p>
+                <p>&copy; 2026 DigiShoppingCard - <span data-i18n="landing_developed_by">Developed by Daniele
+                        Franceschini</span></p>
                 <div class="footer-links">
-                    <a href="index.html">Apri App</a>
-                    <a href="https://github.com/skinny1973/digishoppingcard/issues" target="_blank"
-                        rel="noopener">Feedback & Supporto</a>
-                    <a href="https://github.com/skinny1973/digishoppingcard" target="_blank" rel="noopener">Codice
-                        Sorgente</a>
+                    <a href="index.html" data-i18n="landing_nav_cta">Apri App</a>
+                    <a href="https://github.com/skinny1973/digishoppingcard/issues" target="_blank" rel="noopener"
+                        data-i18n="landing_feedback">Feedback & Supporto</a>
+                    <a href="https://github.com/skinny1973/digishoppingcard" target="_blank" rel="noopener"
+                        data-i18n="landing_footer_source">Codice Sorgente</a>
                 </div>
             </div>
         </footer>
