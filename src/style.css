@@ -635,13 +635,14 @@ input[type="text"] {
 
 .license-badge {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   background: rgba(99, 102, 241, 0.1);
   color: var(--primary);
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 20px;
   border: 1px solid rgba(99, 102, 241, 0.2);
   margin-bottom: 24px;
+  font-weight: 500;
 }
 
 .info-section {
