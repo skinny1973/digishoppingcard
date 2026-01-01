@@ -643,6 +643,14 @@ input[type="text"] {
   border: 1px solid rgba(99, 102, 241, 0.2);
   margin-bottom: 24px;
   font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.license-badge:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: var(--primary);
+  transform: translateY(-1px);
 }
 
 .info-section {

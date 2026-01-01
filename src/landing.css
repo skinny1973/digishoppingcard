@@ -397,6 +397,16 @@ body {
   font-size: 0.85rem;
 }
 
+.footer small a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  transition: opacity 0.3s;
+}
+
+.footer small a:hover {
+  opacity: 0.7;
+}
+
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
