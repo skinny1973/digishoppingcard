@@ -78,13 +78,44 @@
             display: none;
         }
 
-        .footer-back-link {
+        .footer-back-link,
+        .footer-privacy-link {
             color: var(--primary-color);
             text-decoration: none;
         }
 
-        .footer-back-link:hover {
+        .footer-back-link:hover,
+        .footer-privacy-link:hover {
             text-decoration: underline;
+        }
+
+        /* Navbar visibility */
+        .logo,
+        .nav-links a {
+            color: white !important;
+            text-decoration: none;
+        }
+
+        .btn-nav {
+            background: var(--primary);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-nav:hover {
+            background: var(--primary-hover);
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         @media (max-width: 768px) {
@@ -179,7 +210,8 @@
             <section class="privacy-section">
                 <h2><i data-lucide="database"></i> Local Storage (Local-First)</h2>
                 <p>All information related to your loyalty cards is saved exclusively on your device using
-                    <strong>localStorage</strong>.</p>
+                    <strong>localStorage</strong>.
+                </p>
             </section>
 
             <section class="privacy-section">
