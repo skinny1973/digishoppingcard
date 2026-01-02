@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Privacy Policy - DigiShoppingCard</title>
-    <meta name="description" content="Informativa sulla privacy di DigiShoppingCard - Privacy by Design.">
+    <meta name="description" content="Privacy Policy of DigiShoppingCard - Privacy by Design.">
 
     <!-- PWA Meta Tags -->
     <link rel="manifest" href="./manifest.webmanifest">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="src/landing.css">
     <style>
         .privacy-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 100px auto 60px;
             padding: 40px;
             background: var(--bg-card);
@@ -31,7 +31,7 @@
         }
 
         .privacy-section h2 {
-            color: var(--primary-color);
+            color: var(--primary);
             font-size: 1.5rem;
             margin-bottom: 16px;
             display: flex;
@@ -51,45 +51,40 @@
             margin-top: 10px;
         }
 
-        .lang-switch-privacy {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 20px;
-            gap: 10px;
+        .lang-switch-container {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 20px;
+        }
+
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 8px;
         }
 
         .lang-btn {
             background: var(--glass);
             border: 1px solid var(--glass-border);
             color: var(--text-main);
-            padding: 8px 16px;
-            border-radius: 12px;
+            padding: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            font-weight: 500;
+            font-size: 0.85rem;
             transition: all 0.3s;
+            text-align: center;
         }
 
         .lang-btn.active {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
+            background: var(--primary);
+            border-color: var(--primary);
         }
 
         .hidden {
             display: none;
         }
 
-        .footer-back-link,
-        .footer-privacy-link {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .footer-back-link:hover,
-        .footer-privacy-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Navbar visibility */
+        /* Navbar visibility fixes */
         .logo,
         .nav-links a {
             color: white !important;
@@ -102,29 +97,25 @@
             padding: 8px 20px;
             border-radius: 30px;
             font-weight: 600;
-            font-size: 0.9rem;
+        }
+
+        .footer-back-link {
+            color: var(--primary);
             text-decoration: none;
-            transition: all 0.3s;
         }
 
-        .btn-nav:hover {
-            background: var(--primary-hover);
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+        .footer-back-link:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
             .privacy-content {
-                margin-top: 80px;
-                padding: 24px;
-                border-radius: 0;
-                border-left: none;
-                border-right: none;
+                margin: 70px 10px 40px;
+                padding: 20px;
+            }
+
+            .lang-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
@@ -145,122 +136,148 @@
     </nav>
 
     <main class="privacy-content">
-        <div class="lang-switch-privacy">
-            <button onclick="showLang('it')" id="btn-it" class="lang-btn active">Italiano</button>
-            <button onclick="showLang('en')" id="btn-en" class="lang-btn">English</button>
+        <div class="lang-switch-container">
+            <div class="lang-grid">
+                <button onclick="showLang('it')" id="btn-it" class="lang-btn active">IT</button>
+                <button onclick="showLang('en')" id="btn-en" class="lang-btn">EN</button>
+                <button onclick="showLang('es')" id="btn-es" class="lang-btn">ES</button>
+                <button onclick="showLang('fr')" id="btn-fr" class="lang-btn">FR</button>
+                <button onclick="showLang('de')" id="btn-de" class="lang-btn">DE</button>
+                <button onclick="showLang('pt')" id="btn-pt" class="lang-btn">PT</button>
+                <button onclick="showLang('bn')" id="btn-bn" class="lang-btn">BN</button>
+                <button onclick="showLang('ar')" id="btn-ar" class="lang-btn">AR</button>
+                <button onclick="showLang('ru')" id="btn-ru" class="lang-btn">RU</button>
+                <button onclick="showLang('id')" id="btn-id" class="lang-btn">ID</button>
+            </div>
         </div>
 
-        <!-- Versione Italiana -->
+        <!-- IT -->
         <article id="privacy-it">
             <header class="privacy-section">
                 <h1>Informativa sulla Privacy</h1>
-                <p>Ultimo aggiornamento: 2 Gennaio 2026</p>
-                <p>DigiShoppingCard è un'applicazione progettata con il principio della <strong>Privacy by
-                        Design</strong>. La tua privacy non è solo una funzione, è il cuore dell'applicazione.</p>
+                <p>DigiShoppingCard è progettata come app "Privacy by Design". La tua privacy è il cuore del progetto.
+                </p>
             </header>
-
             <section class="privacy-section">
-                <h2><i data-lucide="shield-check"></i> Nessuna raccolta dati</h2>
-                <p>DigiShoppingCard <strong>non raccoglie, non memorizza e non trasmette</strong> alcun dato personale a
-                    server esterni. Non è richiesta alcuna registrazione e non vengono creati profili utente.</p>
-            </section>
-
-            <section class="privacy-section">
-                <h2><i data-lucide="database"></i> Archiviazione Locale (Local-First)</h2>
-                <p>Tutte le informazioni relative alle tue carte fedeltà vengono salvate esclusivamente all'interno del
-                    tuo dispositivo tramite la tecnologia <strong>localStorage</strong> del browser.</p>
-            </section>
-
-            <section class="privacy-section">
-                <h2><i data-lucide="lock"></i> Backup Cifrato</h2>
-                <p>Se utilizzi la funzione di esportazione dati, l'applicazione offre la possibilità di proteggere il
-                    file con cifratura <strong>AES-256-GCM</strong> tramite una password scelta da te.</p>
-            </section>
-
-            <section class="privacy-section">
-                <h2><i data-lucide="map-pin"></i> Servizi di Terze Parti</h2>
-                <ul>
-                    <li><strong>OpenStreetMap:</strong> L'app utilizza le API di OpenStreetMap per calcolare la distanza
-                        dai negozi. Questo processo avviene localmente. Nessun dato identificativo viene inviato a
-                        server centrali.</li>
-                </ul>
-            </section>
-
-            <section class="privacy-section">
-                <h2><i data-lucide="code"></i> Open Source</h2>
-                <p>DigiShoppingCard è un progetto Open Source rilasciato sotto licenza <strong>GNU GPLv3</strong>.</p>
+                <h2>Nessuna raccolta dati</h2>
+                <p>L'app <strong>non raccoglie</strong> alcun dato personale. Non c'è registrazione, né server esterni.
+                </p>
+                <h2>Archiviazione Locale</h2>
+                <p>Tutti i dati sono salvati esclusivamente sul tuo dispositivo tramite <strong>localStorage</strong>.
+                </p>
+                <h2>Backup Cifrato</h2>
+                <p>I backup possono essere protetti con cifratura <strong>AES-256-GCM</strong> gestita localmente.</p>
+                <h2>Servizi Terzi</h2>
+                <p>Usa le API di OpenStreetMap localmente per Suggerimenti GPS senza inviare dati identificativi.</p>
             </section>
         </article>
 
-        <!-- English Version -->
+        <!-- EN -->
         <article id="privacy-en" class="hidden">
             <header class="privacy-section">
                 <h1>Privacy Policy</h1>
-                <p>Last updated: January 2, 2026</p>
-                <p>DigiShoppingCard is an application designed following the <strong>Privacy by Design</strong>
-                    principle.</p>
+                <p>DigiShoppingCard is a "Privacy by Design" app. Your privacy is at the core of the project.</p>
             </header>
-
             <section class="privacy-section">
-                <h2><i data-lucide="shield-check"></i> No Data Collection</h2>
-                <p>DigiShoppingCard <strong>does not collect, store, or transmit</strong> any personal data to external
-                    servers.</p>
-            </section>
-
-            <section class="privacy-section">
-                <h2><i data-lucide="database"></i> Local Storage (Local-First)</h2>
-                <p>All information related to your loyalty cards is saved exclusively on your device using
-                    <strong>localStorage</strong>.
+                <h2>No Data Collection</h2>
+                <p>The app <strong>does not collect</strong> any personal data. No registration, no external servers.
                 </p>
-            </section>
-
-            <section class="privacy-section">
-                <h2><i data-lucide="lock"></i> Encrypted Backup</h2>
-                <p>The app offers the option to protect backup files with <strong>AES-256-GCM</strong> encryption.</p>
-            </section>
-
-            <section class="privacy-section">
-                <h2><i data-lucide="map-pin"></i> Third-Party Services</h2>
-                <ul>
-                    <li><strong>OpenStreetMap:</strong> APIs are used to calculate distance from stores locally. No
-                        identifying data is sent to central servers.</li>
-                </ul>
-            </section>
-
-            <section class="privacy-section">
-                <h2><i data-lucide="code"></i> Open Source</h2>
-                <p>DigiShoppingCard is an Open Source project released under the <strong>GNU GPLv3</strong> license.</p>
+                <h2>Local Storage</h2>
+                <p>All data is saved exclusively on your device via <strong>localStorage</strong>.</p>
+                <h2>Encrypted Backup</h2>
+                <p>Backups can be protected with locally managed <strong>AES-256-GCM</strong> encryption.</p>
+                <h2>Third-Party Services</h2>
+                <p>Uses OpenStreetMap APIs locally for GPS suggestions without sending identifying data.</p>
             </section>
         </article>
+
+        <!-- ES -->
+        <article id="privacy-es" class="hidden">
+            <header class="privacy-section">
+                <h1>Política de Privacidad</h1>
+                <p>DigiShoppingCard es una aplicación "Privacidad por diseño". Su privacidad es el núcleo del proyecto.
+                </p>
+        </article>
+
+        <!-- FR -->
+        <article id="privacy-fr" class="hidden">
+            <header class="privacy-section">
+                <h1>Politique de Confidentialité</h1>
+                <p>DigiShoppingCard est une application "Confidentialité dès la conception". Votre vie privée est au
+                    cœur du projet.</p>
+        </article>
+
+        <!-- DE -->
+        <article id="privacy-de" class="hidden">
+            <header class="privacy-section">
+                <h1>Datenschutzerklärung</h1>
+                <p>DigiShoppingCard ist eine "Privacy by Design" App. Ihr Datenschutz steht im Mittelpunkt des Projekts.
+                </p>
+        </article>
+
+        <!-- PT -->
+        <article id="privacy-pt" class="hidden">
+            <header class="privacy-section">
+                <h1>Política de Privacidade</h1>
+                <p>A DigiShoppingCard é uma aplicação "Privacidade por Design". A sua privacidade é o núcleo do projeto.
+                </p>
+        </article>
+
+        <!-- BN -->
+        <article id="privacy-bn" class="hidden">
+            <header class="privacy-section">
+                <h1>গোপনীয়তা নীতি</h1>
+                <p>DigiShoppingCard একটি "প্রাইভেসি বাই ডিজাইন" অ্যাপ। আপনার গোপনীয়তাই প্রজেক্টের মূলে।</p>
+        </article>
+
+        <!-- AR -->
+        <article id="privacy-ar" class="hidden">
+            <header class="privacy-section">
+                <h1>سياسة الخصوصية</h1>
+                <p>DigiShoppingCard هو تطبيق مصمم على مبدأ "الخصوصية بالتصميم". خصوصيتك هي جوهر المشروع.</p>
+        </article>
+
+        <!-- RU -->
+        <article id="privacy-ru" class="hidden">
+            <header class="privacy-section">
+                <h1>Политика конфиденциальности</h1>
+                <p>DigiShoppingCard — это приложение "Privacy by Design". Ваша конфиденциальность — основа проекта.</p>
+        </article>
+
+        <!-- ID -->
+        <article id="privacy-id" class="hidden">
+            <header class="privacy-section">
+                <h1>Kebijakan Privasi</h1>
+                <p>DigiShoppingCard adalah aplikasi "Privasi berdasarkan Desain". Privasi Anda adalah inti dari proyek
+                    ini.</p>
+        </article>
+
+        <section class="privacy-section">
+            <p><strong>Note for all languages:</strong> This app stores all data locally on your device. No personal
+                information is ever shared or collected by the developer. The source code is available on GitHub under
+                GPLv3 license for transparency.</p>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="footer-container">
-            <p>&copy; 2026 DigiShoppingCard - <a href="landing.html" class="footer-back-link">Torna alla Home</a></p>
+            <p>&copy; 2026 DigiShoppingCard - <a href="landing.html" class="footer-back-link">Torna alla Home / Back to
+                    Home</a></p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
+        const langs = ['it', 'en', 'es', 'fr', 'de', 'pt', 'bn', 'ar', 'ru', 'id'];
 
-        function showLang(lang) {
-            const it = document.getElementById('privacy-it');
-            const en = document.getElementById('privacy-en');
-            const btnIt = document.getElementById('btn-it');
-            const btnEn = document.getElementById('btn-en');
-
-            if (lang === 'it') {
-                it.style.display = 'block';
-                en.style.display = 'none';
-                btnIt.classList.add('active');
-                btnEn.classList.remove('active');
-            } else {
-                it.style.display = 'none';
-                en.style.display = 'block';
-                btnIt.classList.remove('active');
-                btnEn.classList.add('active');
-            }
+        function showLang(selected) {
+            langs.forEach(lang => {
+                document.getElementById(`privacy-${lang}`).classList.add('hidden');
+                document.getElementById(`btn-${lang}`).classList.remove('active');
+            });
+            document.getElementById(`privacy-${selected}`).classList.remove('hidden');
+            document.getElementById(`btn-${selected}`).classList.add('active');
         }
     </script>
 </body>
