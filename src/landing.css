@@ -392,6 +392,15 @@ body {
   line-height: 1.5;
 }
 
+.footer-link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
 .footer small {
   opacity: 0.8;
   font-size: 0.85rem;

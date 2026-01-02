@@ -22,8 +22,8 @@
             background: var(--bg-card);
             border: 1px solid var(--glass-border);
             border-radius: 24px;
-            backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
         }
 
         .privacy-section {
@@ -72,6 +72,19 @@
         .lang-btn.active {
             background: var(--primary-color);
             border-color: var(--primary-color);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .footer-back-link {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer-back-link:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -123,101 +136,75 @@
 
             <section class="privacy-section">
                 <h2><i data-lucide="database"></i> Archiviazione Locale (Local-First)</h2>
-                <p>Tutte le informazioni relative alle tue carte fedeltà (nomi dei negozi, numeri di barcodce,
-                    categorie) vengono salvate esclusivamente all'interno del tuo dispositivo tramite la tecnologia
-                    <strong>localStorage</strong> del browser.</p>
-                <p>Questi dati non lasciano mai il tuo dispositivo a meno che tu non decida esplicitamente di esportare
-                    un backup manuale.</p>
+                <p>Tutte le informazioni relative alle tue carte fedeltà vengono salvate esclusivamente all'interno del
+                    tuo dispositivo tramite la tecnologia <strong>localStorage</strong> del browser.</p>
             </section>
 
             <section class="privacy-section">
                 <h2><i data-lucide="lock"></i> Backup Cifrato</h2>
                 <p>Se utilizzi la funzione di esportazione dati, l'applicazione offre la possibilità di proteggere il
-                    file con cifratura <strong>AES-256-GCM</strong> tramite una password scelta da te. La password e i
-                    dati cifrati vengono gestiti localmente e non sono accessibili allo sviluppatore.</p>
+                    file con cifratura <strong>AES-256-GCM</strong> tramite una password scelta da te.</p>
             </section>
 
             <section class="privacy-section">
                 <h2><i data-lucide="map-pin"></i> Servizi di Terze Parti</h2>
                 <ul>
                     <li><strong>OpenStreetMap:</strong> L'app utilizza le API di OpenStreetMap per calcolare la distanza
-                        dai negozi. Questo processo avviene localmente per suggerire la carta corretta in base alla
-                        posizione. Nessun dato identificativo o coordinata GPS viene inviato a server centrali in modo
-                        persistente.</li>
+                        dai negozi. Questo processo avviene localmente. Nessun dato identificativo viene inviato a
+                        server centrali.</li>
                 </ul>
             </section>
 
             <section class="privacy-section">
                 <h2><i data-lucide="code"></i> Open Source</h2>
-                <p>DigiShoppingCard è un progetto Open Source rilasciato sotto licenza <strong>GNU GPLv3</strong>. Il
-                    codice sorgente è pubblicamente verificabile su GitHub per garantire la massima trasparenza sulle
-                    pratiche di gestione dei dati.</p>
-            </section>
-
-            <section class="privacy-section">
-                <h2>Contatti</h2>
-                <p>Per domande sull'informativa o sul funzionamento dell'app, puoi consultare il deposito GitHub
-                    ufficiale.</p>
+                <p>DigiShoppingCard è un progetto Open Source rilasciato sotto licenza <strong>GNU GPLv3</strong>.</p>
             </section>
         </article>
 
         <!-- English Version -->
-        <article id="privacy-en" style="display: none;">
+        <article id="privacy-en" class="hidden">
             <header class="privacy-section">
                 <h1>Privacy Policy</h1>
                 <p>Last updated: January 2, 2026</p>
                 <p>DigiShoppingCard is an application designed following the <strong>Privacy by Design</strong>
-                    principle. Your privacy is not just a feature; it's the core of the app.</p>
+                    principle.</p>
             </header>
 
             <section class="privacy-section">
                 <h2><i data-lucide="shield-check"></i> No Data Collection</h2>
                 <p>DigiShoppingCard <strong>does not collect, store, or transmit</strong> any personal data to external
-                    servers. No registration is required, and no user profiles are created.</p>
+                    servers.</p>
             </section>
 
             <section class="privacy-section">
                 <h2><i data-lucide="database"></i> Local Storage (Local-First)</h2>
-                <p>All information related to your loyalty cards (store names, barcode numbers, categories) is saved
-                    exclusively on your device using the browser's <strong>localStorage</strong> technology.</p>
-                <p>This data never leaves your device unless you explicitly choose to export a manual backup.</p>
+                <p>All information related to your loyalty cards is saved exclusively on your device using
+                    <strong>localStorage</strong>.</p>
             </section>
 
             <section class="privacy-section">
                 <h2><i data-lucide="lock"></i> Encrypted Backup</h2>
-                <p>If you use the data export function, the app offers the option to protect the file with
-                    <strong>AES-256-GCM</strong> encryption using a password of your choice. The password and encrypted
-                    data are handled locally and are not accessible to the developer.</p>
+                <p>The app offers the option to protect backup files with <strong>AES-256-GCM</strong> encryption.</p>
             </section>
 
             <section class="privacy-section">
                 <h2><i data-lucide="map-pin"></i> Third-Party Services</h2>
                 <ul>
-                    <li><strong>OpenStreetMap:</strong> The app uses OpenStreetMap APIs to calculate distance from
-                        stores. This process happens locally to suggest the correct card based on your location. No
-                        identifying data or GPS coordinates are persistently sent to central servers.</li>
+                    <li><strong>OpenStreetMap:</strong> APIs are used to calculate distance from stores locally. No
+                        identifying data is sent to central servers.</li>
                 </ul>
             </section>
 
             <section class="privacy-section">
                 <h2><i data-lucide="code"></i> Open Source</h2>
-                <p>DigiShoppingCard is an Open Source project released under the <strong>GNU GPLv3</strong> license. The
-                    source code is publicly verifiable on GitHub to ensure full transparency regarding data handling
-                    practices.</p>
-            </section>
-
-            <section class="privacy-section">
-                <h2>Contacts</h2>
-                <p>For questions about this policy or how the app works, you can consult the official GitHub repository.
-                </p>
+                <p>DigiShoppingCard is an Open Source project released under the <strong>GNU GPLv3</strong> license.</p>
             </section>
         </article>
     </main>
 
     <footer class="footer">
         <div class="footer-container">
-            <p>&copy; 2026 DigiShoppingCard - <a href="landing.html"
-                    style="color: var(--primary-color); text-decoration: none;">Torna alla Home</a></p>
+            <p>&copy; 2026 DigiShoppingCard - <a href="landing.html" class="footer-back-link">Torna alla Home</a></p>
         </div>
     </footer>
 
