@@ -84,7 +84,6 @@
             display: none;
         }
 
-        /* Navbar visibility fixes */
         .logo,
         .nav-links a {
             color: white !important;
@@ -111,7 +110,7 @@
         @media (max-width: 768px) {
             .privacy-content {
                 margin: 70px 10px 40px;
-                padding: 20px;
+                padding: 24px;
             }
 
             .lang-grid {
@@ -138,16 +137,16 @@
     <main class="privacy-content">
         <div class="lang-switch-container">
             <div class="lang-grid">
-                <button onclick="showLang('it')" id="btn-it" class="lang-btn active">IT</button>
-                <button onclick="showLang('en')" id="btn-en" class="lang-btn">EN</button>
-                <button onclick="showLang('es')" id="btn-es" class="lang-btn">ES</button>
-                <button onclick="showLang('fr')" id="btn-fr" class="lang-btn">FR</button>
-                <button onclick="showLang('de')" id="btn-de" class="lang-btn">DE</button>
-                <button onclick="showLang('pt')" id="btn-pt" class="lang-btn">PT</button>
-                <button onclick="showLang('bn')" id="btn-bn" class="lang-btn">BN</button>
-                <button onclick="showLang('ar')" id="btn-ar" class="lang-btn">AR</button>
-                <button onclick="showLang('ru')" id="btn-ru" class="lang-btn">RU</button>
-                <button onclick="showLang('id')" id="btn-id" class="lang-btn">ID</button>
+                <button onclick="showLang('it')" id="btn-it" class="lang-btn active">Italiano</button>
+                <button onclick="showLang('en')" id="btn-en" class="lang-btn">English</button>
+                <button onclick="showLang('es')" id="btn-es" class="lang-btn">Español</button>
+                <button onclick="showLang('fr')" id="btn-fr" class="lang-btn">Français</button>
+                <button onclick="showLang('de')" id="btn-de" class="lang-btn">Deutsch</button>
+                <button onclick="showLang('pt')" id="btn-pt" class="lang-btn">Português</button>
+                <button onclick="showLang('bn')" id="btn-bn" class="lang-btn">বাংলা</button>
+                <button onclick="showLang('ar')" id="btn-ar" class="lang-btn">العربية</button>
+                <button onclick="showLang('ru')" id="btn-ru" class="lang-btn">Русский</button>
+                <button onclick="showLang('id')" id="btn-id" class="lang-btn">Indonesia</button>
             </div>
         </div>
 
@@ -155,20 +154,22 @@
         <article id="privacy-it">
             <header class="privacy-section">
                 <h1>Informativa sulla Privacy</h1>
-                <p>DigiShoppingCard è progettata come app "Privacy by Design". La tua privacy è il cuore del progetto.
-                </p>
+                <p>DigiShoppingCard è un'app progettata con il principio della <strong>Privacy by Design</strong>. La
+                    tua privacy non è una funzione, è il cuore del progetto.</p>
             </header>
             <section class="privacy-section">
                 <h2>Nessuna raccolta dati</h2>
-                <p>L'app <strong>non raccoglie</strong> alcun dato personale. Non c'è registrazione, né server esterni.
-                </p>
+                <p>L'app <strong>non raccoglie</strong>, non memorizza e non trasmette alcun dato personale a server
+                    esterni. Non è richiesta alcuna registrazione.</p>
                 <h2>Archiviazione Locale</h2>
-                <p>Tutti i dati sono salvati esclusivamente sul tuo dispositivo tramite <strong>localStorage</strong>.
-                </p>
+                <p>Tutti i dati delle tue carte sono salvati esclusivamente sul tuo dispositivo tramite
+                    <strong>localStorage</strong>.</p>
                 <h2>Backup Cifrato</h2>
-                <p>I backup possono essere protetti con cifratura <strong>AES-256-GCM</strong> gestita localmente.</p>
+                <p>I backup possono essere protetti con cifratura <strong>AES-256-GCM</strong> gestita interamente sul
+                    tuo dispositivo.</p>
                 <h2>Servizi Terzi</h2>
-                <p>Usa le API di OpenStreetMap localmente per Suggerimenti GPS senza inviare dati identificativi.</p>
+                <p>L'app utilizza le API di OpenStreetMap localmente per Suggerimenti GPS. Nessun dato identificativo
+                    viene inviato a terze parti.</p>
             </section>
         </article>
 
@@ -176,18 +177,21 @@
         <article id="privacy-en" class="hidden">
             <header class="privacy-section">
                 <h1>Privacy Policy</h1>
-                <p>DigiShoppingCard is a "Privacy by Design" app. Your privacy is at the core of the project.</p>
+                <p>DigiShoppingCard is designed as a "Privacy by Design" app. Your privacy is at the core of the
+                    project.</p>
             </header>
             <section class="privacy-section">
                 <h2>No Data Collection</h2>
-                <p>The app <strong>does not collect</strong> any personal data. No registration, no external servers.
-                </p>
+                <p>The app <strong>does not collect</strong>, store, or transmit any personal data to external servers.
+                    No registration required.</p>
                 <h2>Local Storage</h2>
-                <p>All data is saved exclusively on your device via <strong>localStorage</strong>.</p>
+                <p>All your card data is saved exclusively on your device via <strong>localStorage</strong>.</p>
                 <h2>Encrypted Backup</h2>
-                <p>Backups can be protected with locally managed <strong>AES-256-GCM</strong> encryption.</p>
+                <p>Backups can be protected with <strong>AES-256-GCM</strong> encryption managed entirely on your
+                    device.</p>
                 <h2>Third-Party Services</h2>
-                <p>Uses OpenStreetMap APIs locally for GPS suggestions without sending identifying data.</p>
+                <p>Uses OpenStreetMap APIs locally for GPS suggestions. No identifying data is sent to third parties.
+                </p>
             </section>
         </article>
 
@@ -197,6 +201,21 @@
                 <h1>Política de Privacidad</h1>
                 <p>DigiShoppingCard es una aplicación "Privacidad por diseño". Su privacidad es el núcleo del proyecto.
                 </p>
+            </header>
+            <section class="privacy-section">
+                <h2>Sin recopilación de datos</h2>
+                <p>La aplicación <strong>no recopila</strong>, almacena ni transmite ningún dato personal a servidores
+                    externos. No es necesario registrarse.</p>
+                <h2>Almacenamiento local</h2>
+                <p>Todos los datos de sus tarjetas se guardan exclusivamente en su dispositivo a través de
+                    <strong>localStorage</strong>.</p>
+                <h2>Copia de seguridad cifrada</h2>
+                <p>Las copias de seguridad se pueden proteger con cifrado <strong>AES-256-GCM</strong> gestionado
+                    localmente.</p>
+                <h2>Servicios de terceros</h2>
+                <p>Utiliza las API de OpenStreetMap localmente para sugerencias de GPS. No se envían datos
+                    identificativos.</p>
+            </section>
         </article>
 
         <!-- FR -->
@@ -205,14 +224,44 @@
                 <h1>Politique de Confidentialité</h1>
                 <p>DigiShoppingCard est une application "Confidentialité dès la conception". Votre vie privée est au
                     cœur du projet.</p>
+            </header>
+            <section class="privacy-section">
+                <h2>Pas de collecte de données</h2>
+                <p>L'application <strong>ne collecte</strong>, ne stocke ni ne transmet aucune donnée personnelle à des
+                    serveurs externes. Aucune inscription n'est requise.</p>
+                <h2>Stockage local</h2>
+                <p>Toutes les données de vos cartes sont enregistrées exclusivement sur votre appareil via
+                    <strong>localStorage</strong>.</p>
+                <h2>Sauvegarde chiffrée</h2>
+                <p>Les sauvegardes peuvent être protégées par un cryptage <strong>AES-256-GCM</strong> géré localement.
+                </p>
+                <h2>Services tiers</h2>
+                <p>Utilise les API OpenStreetMap localement pour les suggestions GPS. Aucune donnée d'identification
+                    n'est envoyée.</p>
+            </section>
         </article>
 
         <!-- DE -->
         <article id="privacy-de" class="hidden">
             <header class="privacy-section">
                 <h1>Datenschutzerklärung</h1>
-                <p>DigiShoppingCard ist eine "Privacy by Design" App. Ihr Datenschutz steht im Mittelpunkt des Projekts.
+                <p>DigiShoppingCard ist eine "Privacy by Design" Anwendung. Ihr Datenschutz steht im Mittelpunkt des
+                    Projekts.</p>
+            </header>
+            <section class="privacy-section">
+                <h2>Keine Datenerhebung</h2>
+                <p>Die App <strong>erhebt</strong>, speichert oder überträgt keine personenbezogenen Daten an externe
+                    Server. Keine Registrierung erforderlich.</p>
+                <h2>Lokale Speicherung</h2>
+                <p>Alle Ihre Kartendaten werden ausschließlich auf Ihrem Gerät über <strong>localStorage</strong>
+                    gespeichert.</p>
+                <h2>Verschlüsseltes Backup</h2>
+                <p>Backups können mit einer lokal verwalteten <strong>AES-256-GCM</strong> Verschlüsselung geschützt
+                    werden.</p>
+                <h2>Dienste von Drittanbietern</h2>
+                <p>Nutzt OpenStreetMap-APIs lokal für GPS-Vorschläge. Es werden keine identifizierbaren Daten gesendet.
                 </p>
+            </section>
         </article>
 
         <!-- PT -->
@@ -221,6 +270,21 @@
                 <h1>Política de Privacidade</h1>
                 <p>A DigiShoppingCard é uma aplicação "Privacidade por Design". A sua privacidade é o núcleo do projeto.
                 </p>
+            </header>
+            <section class="privacy-section">
+                <h2>Sem recolha de dados</h2>
+                <p>A aplicação <strong>não recolhe</strong>, armazena ou transmite quaisquer dados pessoais para
+                    servidores externos. Não é necessário registo.</p>
+                <h2>Armazenamento local</h2>
+                <p>Todos os dados dos seus cartões são guardados exclusivamente no seu dispositivo através do
+                    <strong>localStorage</strong>.</p>
+                <h2>Backup criptografado</h2>
+                <p>As cópias de segurança podem ser protegidas com criptografia <strong>AES-256-GCM</strong> gerida
+                    localmente.</p>
+                <h2>Serviços de terceiros</h2>
+                <p>Utiliza as APIs do OpenStreetMap localmente para sugestões de GPS. Nenhum dado identificativo é
+                    enviado.</p>
+            </section>
         </article>
 
         <!-- BN -->
@@ -228,6 +292,20 @@
             <header class="privacy-section">
                 <h1>গোপনীয়তা নীতি</h1>
                 <p>DigiShoppingCard একটি "প্রাইভেসি বাই ডিজাইন" অ্যাপ। আপনার গোপনীয়তাই প্রজেক্টের মূলে।</p>
+            </header>
+            <section class="privacy-section">
+                <h2>কোনও ডেটা সংগ্রহ নেই</h2>
+                <p>অ্যাপটি কোনও ব্যক্তিগত ডেটা <strong>সংগ্রহ</strong>, সংরক্ষণ বা বাহ্যিক সার্ভারে প্রেরণ করে না। কোনও
+                    রেজিস্ট্রেশনের প্রয়োজন নেই।</p>
+                <h2>লোকাল স্টোরেজ</h2>
+                <p>আপনার সমস্ত কার্ডের ডেটা শুধুমাত্র আপনার ডিভাইসে <strong>localStorage</strong> এর মাধ্যমে সংরক্ষিত
+                    থাকে।</p>
+                <h2>এনক্রিপ্টেড ব্যাকআপ</h2>
+                <p>ব্যাকআপগুলিকে স্থানীয়ভাবে পরিচালিত <strong>AES-256-GCM</strong> এনক্রিপশন দিয়ে সুরক্ষিত করা যেতে
+                    পারে।</p>
+                <h2>তৃতীয় পক্ষের পরিষেবা</h2>
+                <p>GPS সাজেশনের জন্য স্থানীয়ভাবে OpenStreetMap API ব্যবহার করে। কোনও শনাক্তকারী ডেটা পাঠানো হয় না।</p>
+            </section>
         </article>
 
         <!-- AR -->
@@ -235,6 +313,18 @@
             <header class="privacy-section">
                 <h1>سياسة الخصوصية</h1>
                 <p>DigiShoppingCard هو تطبيق مصمم على مبدأ "الخصوصية بالتصميم". خصوصيتك هي جوهر المشروع.</p>
+            </header>
+            <section class="privacy-section">
+                <h2>لا جمع للبيانات</h2>
+                <p>التطبيق <strong>لا يجمع</strong> أو يخزن أو ينقل أي بيانات شخصية إلى خوادم خارجية. لا يلزم التسجيل.
+                </p>
+                <h2>التخزين المحلي</h2>
+                <p>يتم حفظ جميع بيانات بطاقاتك حصريًا على جهازك عبر <strong>localStorage</strong>.</p>
+                <h2>نسخ احتياطي مشفر</h2>
+                <p>يمكن حماية النسخ الاحتياطية بتشفير <strong>AES-256-GCM</strong> المدار محليًا.</p>
+                <h2>خدمات الطرف الثالث</h2>
+                <p>يستخدم واجهات برمجة تطبيقات OpenStreetMap محليًا لاقتراحات GPS. لا يتم إرسال بيانات تعريفية.</p>
+            </section>
         </article>
 
         <!-- RU -->
@@ -242,6 +332,19 @@
             <header class="privacy-section">
                 <h1>Политика конфиденциальности</h1>
                 <p>DigiShoppingCard — это приложение "Privacy by Design". Ваша конфиденциальность — основа проекта.</p>
+            </header>
+            <section class="privacy-section">
+                <h2>Нет сбора данных</h2>
+                <p>Приложение <strong>не собирает</strong>, не хранит и не передает никакие персональные данные на
+                    внешние серверы. Регистрация не требуется.</p>
+                <h2>Локальное хранение</h2>
+                <p>Все данные ваших карт сохраняются исключительно на вашем устройстве через
+                    <strong>localStorage</strong>.</p>
+                <h2>Шифрованный бэкап</h2>
+                <p>Резервные копии можно защитить шифрованием <strong>AES-256-GCM</strong>, управляемым локально.</p>
+                <h2>Сторонние сервисы</h2>
+                <p>Использует API OpenStreetMap локально для GPS-подсказок. Идентификационные данные не передаются.</p>
+            </section>
         </article>
 
         <!-- ID -->
@@ -250,12 +353,26 @@
                 <h1>Kebijakan Privasi</h1>
                 <p>DigiShoppingCard adalah aplikasi "Privasi berdasarkan Desain". Privasi Anda adalah inti dari proyek
                     ini.</p>
+            </header>
+            <section class="privacy-section">
+                <h2>Tidak ada pengumpulan data</h2>
+                <p>Aplikasi <strong>tidak mengumpulkan</strong>, menyimpan, atau mengirimkan data pribadi apa pun ke
+                    server eksternal. Tidak diperlukan pendaftaran.</p>
+                <h2>Penyimpanan Lokal</h2>
+                <p>Semua data kartu Anda disimpan secara eksklusif di perangkat Anda melalui
+                    <strong>localStorage</strong>.</p>
+                <h2>Cadangan Terenkripsi</h2>
+                <p>Cadangan dapat dilindungi dengan enkripsi <strong>AES-256-GCM</strong> yang dikelola secara lokal.
+                </p>
+                <h2>Layanan Pihak Ketiga</h2>
+                <p>Menggunakan API OpenStreetMap secara lokal untuk saran GPS. Tidak ada data identitas yang dikirim.
+                </p>
+            </section>
         </article>
 
-        <section class="privacy-section">
-            <p><strong>Note for all languages:</strong> This app stores all data locally on your device. No personal
-                information is ever shared or collected by the developer. The source code is available on GitHub under
-                GPLv3 license for transparency.</p>
+        <section class="privacy-section" style="border-top: 1px solid var(--glass-border); padding-top: 20px;">
+            <p><strong>Open Source:</strong> This project is released under the GNU GPLv3 license. You can verify the
+                source code on GitHub for full transparency.</p>
         </section>
     </main>
 
